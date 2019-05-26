@@ -15,11 +15,11 @@ Configure o base url em application/config/config.php
 $config['base_url'] = 'http://localhost/yourapp'
 ```
 
-### Banco de dados
+### Conectando ao Banco de Dados
 
-Credenciais do banco configuradas em application/config/database.php
+Credenciais do banco configuradas em `application/config/database.php`
 
-- Troque os valores *YOURHOST*, *DB_USERNAME*, *DB_PASSWORD* e *DB_NAME* pelo host, username, senha e nome do banco de dados respectivamente
+- Troque os valores `YOURHOST`, `DB_USERNAME`, `DB_PASSWORD` e `DB_NAME` pelo host, username, senha e nome do banco de dados respectivamente
 
 ```php
 $db['default'] = array(
