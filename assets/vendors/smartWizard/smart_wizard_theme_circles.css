@@ -1,0 +1,122 @@
+/*!
+ * SmartWizard v4.3.x
+ * jQuery Wizard Plugin
+ * http://www.techlaboratory.net/smartwizard
+ *
+ * Created by Dipu Raj
+ * http://dipuraj.me
+ *
+ * Licensed under the terms of MIT License
+ * https://github.com/techlab/SmartWizard/blob/master/LICENSE
+ */
+
+/* SmartWizard Theme: Circles */
+.sw-theme-circles{
+
+}
+.sw-theme-circles .sw-container {
+    min-height: 300px;
+}
+.sw-theme-circles .step-content {
+    padding: 10px 0;
+    background-color: #FFF;
+    text-align: left;
+}
+.sw-theme-circles .sw-toolbar{
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0 !important;
+}
+.sw-theme-circles .sw-toolbar-top{
+
+}
+.sw-theme-circles .sw-toolbar-bottom{
+    border-top-color: #ddd !important;
+    border-bottom-color: #ddd !important;
+}
+
+ul.step-anchor{
+    position: relative;
+    background: #fff;
+    border: none;
+    list-style: none;
+    margin-bottom: 40px;
+}
+ul.step-anchor:before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    width: 80%;
+    height: 5px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    z-index: 0;
+}
+ul.step-anchor > li{
+    border: none;
+    margin-left: 40px;
+    z-index: 98;
+}
+ul.step-anchor > li > a{
+    border: 2px solid #f5f5f5;
+    background: #f5f5f5;
+    width: 52px;
+    height: 50px;
+    text-align: center;
+    padding: 25px 0;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 3px #fff !important;
+    text-decoration: none;
+    outline-style:none;
+    z-index: 99;
+    color: #bbb;
+    background: #f5f5f5;
+    line-height: 0.3;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+ul.step-anchor > li > a:hover  {
+    color: #fff;
+    background: #048fdb;
+    border-width: 2px;
+}
+ul.step-anchor > li > a > small{
+    position: relative;
+    bottom: -20px;
+    color: #ccc;
+	line-height: 1.2;
+	font-size: 16px;
+	font-weight: bold;
+}
+ul.step-anchor > li.clickable > a:hover {
+    color: #048fdb !important;
+}
+ul.step-anchor > li.active > a {
+    border-color: #048fdb;
+    color: #fff;
+    background: #048fdb;
+}
+ul.step-anchor > li.active > a > small{
+    color: #048fdb;
+}
+ul.step-anchor > li.done > a {
+    border-color: #036ca6;
+    color: #fff;
+    background: #036ca6;
+}
+ul.step-anchor > li.done > a > small{
+    color: #036ca6;
+}
+ul.step-anchor > li.danger > a {
+    border-color: #036ca6;
+    color: #036ca6;
+    background: #036ca6;
+}
+ul.step-anchor > li.danger > a > small{
+    color: #036ca6;
+}
+ul.step-anchor > li.disabled > a, .sw-theme-circles > ul.step-anchor > li.disabled > a:hover {
+    color: #048fdb !important;
+}
