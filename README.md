@@ -1112,8 +1112,10 @@ O arquivo `application/views/components/alerts` contém a ligação entre o `PHP
 <?php endif; ?>
 ```
 
+> A função `notifyUser()` está definida em `assets/js/functions.js`
+
 Existem cinco tipos de notificações pré-definidas: `success`, `error`, `warning`, `info` e `loading`.
- 
+
 ### Plugins JS
 Localizados em `assets/vendors/`
 
