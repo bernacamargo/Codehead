@@ -1,4 +1,3 @@
-
 <?php if($this->session->flashdata('success')): ?>
     <script>
         $(document).ready(function(){
@@ -16,19 +15,27 @@
     </script>
 <?php endif; ?>
 
-
-<?php if($this->session->flashdata('info')): ?>
+<?php if($this->session->flashdata('warning')): ?>
     <script>
         $(document).ready(function(){
-            notifyUser('info', '<?php echo $this->session->flashdata('info') ?>', 'dark');
+            notifyUser('warning', '<?php echo $this->session->flashdata('warning') ?>');
         });
     </script>
 <?php endif; ?>
 
+<?php if($this->session->flashdata('info')): ?>
+    <script>
+        $(document).ready(function(){
+            notifyUser('info', '<?php echo $this->session->flashdata('info') ?>');
+        });
+    </script>
+<?php endif; ?>
+
+
 <?php if($this->session->flashdata('loading')): ?>
     <script>
         $(document).ready(function(){
-            notifyUser('loading', '<?php echo $this->session->flashdata('loading') ?>', 'dark');
+            notifyUser('loading', '<?php echo $this->session->flashdata('loading') ?>');
         });
     </script>
 <?php endif; ?>
