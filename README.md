@@ -1064,9 +1064,56 @@ else{
 
 ### Notificações
 
-O sistema de notificações embutido neste template utiliza a biblioteca js [PNotify](https://sciactive.com/pnotify/).
+O sistema de notificações deste template utiliza a biblioteca js [PNotify](https://sciactive.com/pnotify/) juntamente com a função [Session flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
+
+O arquivo `application/views/components/alerts` contém a ligação entre o `PHP` e o `Javascript`:
+
+```php
+<?php if($this->session->flashdata('success')): ?>
+    <script>
+        $(document).ready(function(){
+            notifyUser('success', '<?php echo $this->session->flashdata('success') ?>');
+        });
+    </script>
+<?php endif; ?>
 
 
+<?php if($this->session->flashdata('error')): ?>
+    <script>
+        $(document).ready(function(){
+            notifyUser('error', '<?php echo $this->session->flashdata('error') ?>');
+        });
+    </script>
+<?php endif; ?>
+
+<?php if($this->session->flashdata('warning')): ?>
+    <script>
+        $(document).ready(function(){
+            notifyUser('warning', '<?php echo $this->session->flashdata('warning') ?>');
+        });
+    </script>
+<?php endif; ?>
+
+<?php if($this->session->flashdata('info')): ?>
+    <script>
+        $(document).ready(function(){
+            notifyUser('info', '<?php echo $this->session->flashdata('info') ?>');
+        });
+    </script>
+<?php endif; ?>
+
+
+<?php if($this->session->flashdata('loading')): ?>
+    <script>
+        $(document).ready(function(){
+            notifyUser('loading', '<?php echo $this->session->flashdata('loading') ?>');
+        });
+    </script>
+<?php endif; ?>
+```
+
+Existem cinco tipos de notificações pré-definidas: `success`, `error`, `warning`, `info` e `loading`.
+ 
 ### Plugins JS
 Localizados em `assets/vendors/`
 
