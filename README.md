@@ -71,18 +71,6 @@ $config['bootstrap'] = [
     ]
 ];
 
-// Plugins localizados na pasta assets/vendors
-$config['vendors'] = [
-    'css' => [
-
-    ],
-
-    'js' => [
-
-    ]
-];
-
-
 // Notificação carregada por default
 $config['pnotify'] = [
     'css'   =>  [
@@ -109,6 +97,30 @@ $config['pnotify'] = [
 
     ]
 ];
+
+
+
+
+/**
+ * ================================
+ * ALTERAR SOMENTE OS ARRAYS ABAIXO
+ * ================================
+ */
+
+
+
+// Plugins localizados na pasta assets/vendors
+$config['vendors'] = [
+    'css' => [
+
+    ],
+
+    'js' => [
+
+    ]
+];
+
+
 
 // Ultimo módule a ser carregado
 $config['custom'] = [
@@ -1048,6 +1060,11 @@ else{
 ```
 
 > Esta função foi feita apenas para auxiliar no desenvolvimento da aplicação, para que quando você deseje testar uma listagem de dados possa limitar a quantidade de resultados, porém sem poder filtra-los.
+
+
+### Notificações
+
+O sistema de notificações embutido neste template utiliza a biblioteca js [PNotify](https://sciactive.com/pnotify/).
 
 
 ### Plugins JS
