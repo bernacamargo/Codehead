@@ -182,6 +182,7 @@ class Template {
         // carrega os módulos padrão
         $this->loadDefault();
     }
+}
 ```
 
 #### Métodos
