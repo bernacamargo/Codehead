@@ -686,7 +686,7 @@ echo $this->guard->getShortName(); // Bernardo Camargo
     }
 ```
 
-Exemplo:
+ * Exemplo:
 
 ```php
 $this->guard->logout();
@@ -696,7 +696,7 @@ $this->guard->logout();
 ### Classe MY_Model
 *Localizada em application/core/MY_Model.php*
 
-Essa classe é responsável por guardar funções que são comuns em aplicações web que utilizam SQL para manipular um banco de dados.
+Essa classe é responsável por permitir a reutilização de funções que são comuns em aplicações web que utilizam SQL para manipular um banco de dados.
 
 ```php
 class MY_Model extends CI_Model {
@@ -725,9 +725,9 @@ class MY_Model extends CI_Model {
 }
 ```
 
-Basicamente a mágica acontece ao utilizar-se do conceito de herança da *Programação Orientada a Objetos*. Dessa forma os models a serem criados pelo desenvolvedor devem herdar essa classe através do `extends`. O `$table`(nome da tabela) e `$table_id`(chave primária) são atributos essenciais para isso, pois essas duas representam as variáveis de qualquer consulta SQL básica, dessa forma podemos reutilizar funções como getAll, create, update e delete para quase todos os models.
+Basicamente a mágica acontece ao utilizar-se do conceito de herança da *Programação Orientada a Objetos*. Dessa forma os models a serem criados pelo desenvolvedor devem herdar essa classe através da palavra chave `extends`. O `$table`(nome da tabela) e `$table_id`(chave primária) são atributos essenciais para isso, pois essas duas representam as variáveis de qualquer consulta SQL básica, dessa forma podemos reutilizar funções como getAll, create, update e delete para quase todos os models.
 
-***É obrigatório a inicialização destas em todos os models que herdarem esta classe.**
+> É obrigatório a inicialização destas em todos os models que herdarem esta classe.
 
 
 - Exemplo: Model para tabela de `usuarios` cuja a chave primária é `id_usuario`
@@ -762,7 +762,7 @@ class Usuarios_model extends MY_Model {
 
 
 #### Métodos
-- create
+- create()
  ```php
     /**
     * create
@@ -798,7 +798,7 @@ else{
 
 ```
 
-- update
+- update()
  ```php
    /**
     * update
@@ -846,7 +846,7 @@ else{
 
 > O campo `id` do array é **obrigatório**.
 
-- delete
+- delete()
  ```php
    /**
     * delete
@@ -875,7 +875,7 @@ else{
 }
 ```
 
-- getById
+- getById()
  ```php
     /**
     * getById
@@ -883,7 +883,7 @@ else{
     * pega um dado por id
     *
     * @param  $id [Chave primária da tabela]
-    * @return Array [Retorna um array com os dados requisitados ou false caso não encontre nada]
+    * @return mixed [Retorna um array com os dados requisitados ou false caso não encontre nada]
     */
     public function getById( $id ){
         
@@ -913,17 +913,17 @@ else{
 ```
 
 
-- getAll
+- getAll()
  ```php
     /**
     * getAll
     * 
     * pega todos os registros
     *
-    * @param Boolean $where [Opcional: Condições da consulta]
+    * @param mixed $where [Opcional: Condições da consulta]
     * @param String $fields [Opcional: Campos do SELECT da consulta]
-    * @param String $orderby [Opcional: Ordenação da consulta]
-    * @return Array[] [Retorna a coleção de dados requisitadas em uma matriz]
+    * @param mixed $orderby [Opcional: Ordenação da consulta]
+    * @return mixed [Retorna a coleção de dados requisitadas em uma matriz]
     */
     public function getAll( $where = false, $fields = '*', $orderby = false) {
         
@@ -1007,7 +1007,7 @@ else{
 ```
 
 
-- getAllLimit
+- getAllLimit()
  ```php
     /**
      * getAllLimit
