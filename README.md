@@ -174,7 +174,7 @@ class Template {
 
 #### Métodos
 
-- set_title
+- set_title()
 ```php
     /**
      * set_title
@@ -189,7 +189,7 @@ class Template {
     }
 ```
 
-- print_title
+- print_title()
 ```php
     /**
      * print_title
@@ -203,7 +203,7 @@ class Template {
     }
 ```
 
-- loadDefault
+- loadDefault()
 ```php
     /**
      * loadDefault
@@ -222,7 +222,7 @@ class Template {
     }
 ```
 
-- use_module
+- use_module()
 ```php
     /**
      * use_module
@@ -238,7 +238,7 @@ class Template {
     }
 ```
 
-- addCss
+- addCss()
 ```php
     /**
      * addCss
@@ -252,7 +252,7 @@ class Template {
         $this->css[] = $css;
     }
 ```
-- addJs
+- addJs()
 ```php
     /**
      * addJs
@@ -266,7 +266,7 @@ class Template {
         $this->js[] = $js;
     }
 ```
-- view
+- view()
 ```php
     /**
      * view
@@ -281,7 +281,7 @@ class Template {
         $this->view[$chave] = $view;
     }
 ```
-- set
+- set()
 ```php
     /**
      * set
@@ -297,7 +297,7 @@ class Template {
     }
 ```
 
-- item
+- item()
 ```php
     /**
      * item
@@ -312,7 +312,7 @@ class Template {
     }
 ```
 
-- print_view
+- print_view()
 ```php
     /**
      * print_view
@@ -327,7 +327,7 @@ class Template {
     } 
 ```
 
-- page
+- page()
 ```php
     /**
      * page
@@ -342,7 +342,7 @@ class Template {
     }
 ```
 
-- print_component
+- print_component()
 ```php
     /**
      * page
@@ -360,7 +360,7 @@ class Template {
     }
 ```
 
-- print_page
+- print_page()
 ```php
     /**
      * print_page
@@ -380,7 +380,7 @@ class Template {
     }
 ```
 
-- loadModules
+- loadModules()
 ```php
     /**
      * loadModules
@@ -417,7 +417,7 @@ class Template {
     }
 ```
 
-- print_js
+- print_js()
 ```php
     /**
      * print_js
@@ -431,7 +431,7 @@ class Template {
     }
 ```
 
-- print_css
+- print_css()
 ```php
     /**
      * print_css
@@ -445,7 +445,7 @@ class Template {
     }
 ```
 
-- render
+- render()
 ```php
     /**
      * render
@@ -502,7 +502,7 @@ class Guard {
 
 #### Métodos
 
-- logged
+- logged()
 
 ```php
     /**
@@ -526,7 +526,7 @@ Exemplo:
   }
   ```
 
-- item
+- item()
 
 ```php
     /**
@@ -549,7 +549,7 @@ echo $nome;
 // Bernardo Pinheiro Camargo
 ```
 
-- login
+- login()
 
 ```php
     /**
@@ -594,7 +594,7 @@ else{
 }
 ```
 
-- update
+- update()
 
 ```php
     /**
@@ -644,7 +644,7 @@ echo $this->guard->item('nome'); // Bernardo
 ```
 
 
-- getShortName
+- getShortName()
 ```php
     /**
      * getShortName
@@ -672,7 +672,7 @@ echo $this->guard->item('nome'); // Bernardo Pinheiro Camargo
 echo $this->guard->getShortName(); // Bernardo Camargo
 ```
 
-* logout
+* logout()
 ```php
     /**
      * logout
@@ -694,7 +694,7 @@ $this->guard->logout();
 
 
 ### Classe MY_Model
-*Localizada em application/core/MY_Model.php*
+Localizada em `application/core/MY_Model.php`
 
 Essa classe é responsável por permitir a reutilização de funções que são comuns em aplicações web que utilizam SQL para manipular um banco de dados.
 
@@ -725,9 +725,11 @@ class MY_Model extends CI_Model {
 }
 ```
 
-Basicamente a mágica acontece ao utilizar-se do conceito de herança da *Programação Orientada a Objetos*. Dessa forma os models a serem criados pelo desenvolvedor devem herdar essa classe através da palavra chave `extends`. O `$table`(nome da tabela) e `$table_id`(chave primária) são atributos essenciais para isso, pois essas duas representam as variáveis de qualquer consulta SQL básica, dessa forma podemos reutilizar funções como getAll, create, update e delete para quase todos os models.
+Basicamente a mágica acontece ao utilizar-se do conceito de herança da *Programação Orientada a Objetos*. Dessa forma os models a serem criados pelo desenvolvedor devem herdar essa classe através da palavra chave `extends`. 
 
-> É obrigatório a inicialização destas em todos os models que herdarem esta classe.
+O `$table`(nome da tabela) e `$table_id`(chave primária) são atributos essenciais para isso, pois ambas representam as variáveis de qualquer consulta SQL básica, dessa forma podemos reutilizar funções como create, update e delete que ja existem no CI e além disso criar algumas novas como getAll() ou getAllLimit() para todos os models básicos.
+
+> É obrigatório a inicialização destas variáveis **em todos os models** que herdarem esta classe.
 
 
 - Exemplo: Model para tabela de `usuarios` cuja a chave primária é `id_usuario`
