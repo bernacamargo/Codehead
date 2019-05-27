@@ -1136,23 +1136,56 @@ Existem cinco tipos de notificações pré-definidas: `success`, `error`, `warni
 
 * success:
 
-Deve ser utilizada para notificações positivas, ou seja, como o próprio nome diz, de sucesso.
+> Deve ser utilizada para notificações positivas, ou seja, como o próprio nome diz, de sucesso.
 
 * error:
 
-Deve ser utilizada para notificações de erros ou falhas do sistema
+> Deve ser utilizada para notificações de erros ou falhas do sistema
 
 * warning:
 
-Deve ser utilizada para notificações de atenção ao usuário
+> Deve ser utilizada para notificações de atenção ao usuário
 
 * info:
 
-Deve ser utilizada para dar informações extras ao usuário
+> Deve ser utilizada para dar informações extras ao usuário
 
 * loading:
 
-Deve ser utilizada para funções que utilizem `ajax` chamando a função `notifyUser` na `beforeSend()`.
+> Deve ser utilizada para funções que utilizem `ajax` chamando a função `notifyUser` na `beforeSend()` para que passe para o usuário a sensação de que algo está acontecendo visto que o `ajax` é dinâmico e não é percebido pelo usuário final.
+
+
+Para fazer com que as notificações desapareçam basta usar a função do PNotify:
+
+```javascript
+PNotify.removeAll();
+```
+
+Exemplo:
+
+```javascript
+$.ajax({
+    url: '/path/to/file',
+    type: 'POST',
+    dataType: 'json',
+    data: data,
+    beforeSend: function(){
+        notifyUser('loading', 'Carregando informações...');
+    }
+})
+.done(function() {
+    PNotify.removeAll(); //Remove todas as notificações
+
+    console.log("success");
+})
+.fail(function() {
+    console.log("error");
+})
+.always(function() {
+    console.log("complete");
+});
+
+```
 
 
 ### Plugins JS
