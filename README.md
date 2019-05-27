@@ -672,7 +672,7 @@ echo $this->guard->item('nome'); // Bernardo Pinheiro Camargo
 echo $this->guard->getShortName(); // Bernardo Camargo
 ```
 
-- logout
+* logout
 ```php
     /**
      * logout
@@ -686,7 +686,7 @@ echo $this->guard->getShortName(); // Bernardo Camargo
     }
 ```
 
- * Exemplo:
+  * Exemplo:
 
 ```php
 $this->guard->logout();
