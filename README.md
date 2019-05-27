@@ -1116,6 +1116,8 @@ O arquivo `application/views/components/alerts` contém a ligação entre o `PHP
 
 Existem cinco tipos de notificações pré-definidas: `success`, `error`, `warning`, `info` e `loading`.
 
+
+
 ### Plugins JS
 Localizados em `assets/vendors/`
 
