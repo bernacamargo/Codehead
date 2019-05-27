@@ -23,25 +23,25 @@ Credenciais do banco configuradas em `application/config/database.php`
 
 ```php
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'YOURHOST',
-	'username' => 'DB_USERNAME',
-	'password' => 'DB_PASSWORD',
-	'database' => 'DB_NAME',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
+    'dsn'   => '',
+    'hostname' => 'YOURHOST',
+    'username' => 'DB_USERNAME',
+    'password' => 'DB_PASSWORD',
+    'database' => 'DB_NAME',
+    'dbdriver' => 'mysqli',
+    'dbprefix' => '',
+    'pconnect' => FALSE,
+    'db_debug' => (ENVIRONMENT !== 'production'),
+    'cache_on' => FALSE,
+    'cachedir' => '',
+    'char_set' => 'utf8',
+    'dbcollat' => 'utf8_general_ci',
+    'swap_pre' => '',
+    'encrypt' => FALSE,
+    'compress' => FALSE,
+    'stricton' => FALSE,
+    'failover' => array(),
+    'save_queries' => TRUE
 );
 ```
 
@@ -382,7 +382,7 @@ class Template {
 
 - loadModules
 ```php
-	/**
+    /**
      * loadModules
      *
      * Carrega os modulos
@@ -519,10 +519,10 @@ class Guard {
 Exemplo:
   ```php
   if($this->guard->logged()){
-  	echo 'Usuário logado';
+    echo 'Usuário logado';
   }
   else{
-  	echo 'Usuário deslogado';
+    echo 'Usuário deslogado';
   }
   ```
 
@@ -587,10 +587,10 @@ $email = 'bernardopcamargo@gmail.com';
 $senha = '123456';
 
 if($this->guard->login($email, $senha)){
-	echo 'Bem-vindo!';
+    echo 'Bem-vindo!';
 }
 else{
-	echo 'Credenciais inválidas';
+    echo 'Credenciais inválidas';
 }
 ```
 
@@ -734,129 +734,257 @@ Basicamente a mágica acontece ao utilizar-se do conceito de herança da *Progra
 - create
  ```php
     /**
-	* create
-	* 
-	* insere um novo dado
-	*
-	* @param Array $dados [Dados a serem inseridos na tabela]
-	* @return Boolean [Retorna true caso os dados tenham sido inseridos e false caso contrario]
-	*/
-	public function create( $dados ){
-		return $this->db->insert( $this->table, $dados );
-	}
+    * create
+    * 
+    * insere um novo dado
+    *
+    * @param Array $dados [Dados a serem inseridos na tabela]
+    * @return Boolean [Retorna true caso os dados tenham sido inseridos e false caso contrario]
+    */
+    public function create( $dados ){
+        return $this->db->insert( $this->table, $dados );
+    }
+```
+Exemplo:
+
+ ```php
+$this->load->model('Usuarios_model');
+
+$dados = [
+    'nome'          => 'Bernardo Pinheiro Camargo',
+    'email'         => 'bernardopcamargo@gmail.com',
+    'senha'         => '123456',
+    'sexo'          => 'masculino',
+    'data_nasc'     => '1996-04-03'
+]; 
+
+if($this->Usuarios_model->create($dados)){
+    echo 'Usuário cadastrado com sucesso!';
+}
+else{
+    echo 'Houve um erro no servidor.';
+}
+
 ```
 
 - update
  ```php
    /**
-	* update
-	* 
-	* atualiza um dado
-	*
-	* @param Array $dados [Dados a serem atualizados. *O campo 'id' deve ser passado obrigatoriamente]
-	* @return Boolean [Retorna true caso os dados tenham sido atualizados e false caso tenha algum erro de lógica no SQL]
-	*/
-	public function update( $dados ) {
+    * update
+    * 
+    * atualiza um dado
+    *
+    * @param Array $dados [Dados a serem atualizados. *O campo 'id' deve ser passado obrigatoriamente]
+    * @return Boolean [Retorna true caso os dados tenham sido atualizados e false caso tenha algum erro de lógica no SQL]
+    */
+    public function update( $dados ) {
 
-		// prepara os dados
-		$this->db->where( $this->table_id, $dados['id']);
+        // prepara os dados
+        $this->db->where( $this->table_id, $dados['id']);
 
-		// deleta o id
-		unset( $dados['id'] );
-		if ( isset( $dados[$this->table_id] ) ) unset( $dados[$this->table_id] );
+        // deleta o id
+        unset( $dados['id'] );
+        if ( isset( $dados[$this->table_id] ) ) unset( $dados[$this->table_id] );
 
-		// faz o update
-		return $this->db->update($this->table, $dados); 
-	}
+        // faz o update
+        return $this->db->update($this->table, $dados); 
+    }
 ```
+Exemplo:
+
+ ```php
+$this->load->model('Usuarios_model');
+
+$dados = [
+    'id'            => 1,
+    'nome'          => 'Bernardo Pinheiro Camargo',
+    'email'         => 'bernardopcamargo@gmail.com',
+    'senha'         => '123456',
+    'sexo'          => 'masculino',
+    'data_nasc'     => '1996-04-03'
+]; 
+
+if($this->Usuarios_model->update($dados)){
+    echo 'Usuário atualizado com sucesso!';
+}
+else{
+    echo 'Houve um erro no servidor.';
+}
+
+```
+
+> O campo `id` do array é **obrigatório**.
 
 - delete
  ```php
    /**
-	* delete
-	* 
-	* deleta um dado
-	*
-	* @param Any $id [Chave primária da tabela]
-	* @return Boolean [Retorna true caso remova a linha ou false caso contrario]
-	*/
-	public function delete( $id ) {
-		$this->db->where( $this->table_id, $id );
-		return $this->db->delete( $this->table ); 
-	}
+    * delete
+    * 
+    * deleta um dado
+    *
+    * @param mixed $id [Chave primária da tabela]
+    * @return Boolean [Retorna true caso remova a linha ou false caso contrario]
+    */
+    public function delete( $id ) {
+        $this->db->where( $this->table_id, $id );
+        return $this->db->delete( $this->table ); 
+    }
+```
+
+Exemplo
+
+```php
+$this->load->model('Usuarios_model');
+
+if($this->Usuarios_model->delete(1)){
+    echo 'Usuário deletado com sucesso!';
+}
+else{
+    echo 'Houve um erro no servidor.';
+}
 ```
 
 - getById
  ```php
-	/**
-	* getById
-	* 
-	* pega um dado por id
-	*
-	* @param  $id [Chave primária da tabela]
-	* @return Array [Retorna um array com os dados requisitados ou false caso não encontre nada]
-	*/
-	public function getById( $id ){
-		
-		// faz a busca
-		$this->db->select( '*' )
-		->from( $this->table )
-		->where( [$this->table_id => $id ] );
-		$query = $this->db->get();
+    /**
+    * getById
+    * 
+    * pega um dado por id
+    *
+    * @param  $id [Chave primária da tabela]
+    * @return Array [Retorna um array com os dados requisitados ou false caso não encontre nada]
+    */
+    public function getById( $id ){
+        
+        // faz a busca
+        $this->db->select( '*' )
+        ->from( $this->table )
+        ->where( [$this->table_id => $id ] );
+        $query = $this->db->get();
 
-		// verifica se existem resultados
-		return ( $query->num_rows() > 0 ) ? $query->result_array()[0] : false;
-	}
+        // verifica se existem resultados
+        return ( $query->num_rows() > 0 ) ? $query->result_array()[0] : false;
+    }
 ```
+Exemplo
+
+```php
+$this->load->model('Usuarios_model');
+
+$user = $this->Usuarios_model->getById(1);
+
+if($user){
+    echo $user['nome']; //Bernardo Pinheiro Camargo
+}
+else{
+    echo 'Usuário não encontrado';
+}
+```
+
+
 - getAll
  ```php
-	/**
-	* getAll
-	* 
-	* pega todos os registros
-	*
-	* @param Boolean $where [Opcional: Condições da consulta]
-	* @param String $fields [Opcional: Campos do SELECT da consulta]
-	* @param String $orderby [Opcional: Ordenação da consulta]
-	* @return Array[] [Retorna a coleção de dados requisitadas em uma matriz]
-	*/
-	public function getAll( $where = false, $fields = '*', $orderby = false) {
-		
-		if($orderby){
-			$orderby = explode(" ", $orderby);
-			$order = $orderby[1];
-			$order_colum = $orderby[0];
-		}
-		else{
-			$order = 'asc';
-			$order_colum = $this->table_id;
-		}
+    /**
+    * getAll
+    * 
+    * pega todos os registros
+    *
+    * @param Boolean $where [Opcional: Condições da consulta]
+    * @param String $fields [Opcional: Campos do SELECT da consulta]
+    * @param String $orderby [Opcional: Ordenação da consulta]
+    * @return Array[] [Retorna a coleção de dados requisitadas em uma matriz]
+    */
+    public function getAll( $where = false, $fields = '*', $orderby = false) {
+        
+        if($orderby){
+            $orderby = explode(" ", $orderby);
+            $order = $orderby[1];
+            $order_colum = $orderby[0];
+        }
+        else{
+            $order = 'asc';
+            $order_colum = $this->table_id;
+        }
 
-		// monta a busca
+        // monta a busca
         $this->db->select( $fields );
         $this->db->from( $this->table );
 
-		//verifica se existe um where
-		if ( $where ) $this->db->where( $where );
+        //verifica se existe um where
+        if ( $where ) $this->db->where( $where );
 
-		$this->db->order_by($order_colum, $order);
+        $this->db->order_by($order_colum, $order);
 
-		// pega os dados do banco
-		$query = $this->db->get();
+        // pega os dados do banco
+        $query = $this->db->get();
 
-		// verifica se existem resultados
-		return ( $query->num_rows() > 0 ) ? $query->result_array() : false;
-	}	
+        // verifica se existem resultados
+        return ( $query->num_rows() > 0 ) ? $query->result_array() : false;
+    }   
 ```
+
+Exemplo 1:
+
+```php
+$this->load->model('Usuarios_model');
+
+$users = $this->Usuarios_model->getAll(); // Busca todas as tuplas da tabela `usuarios`
+
+if($users){
+    foreach ($users as $user) {
+        echo $user['nome'] . '<br>';
+    }
+}
+else{
+    echo 'Usuário não encontrado';
+}
+```
+
+Exemplo 2:
+
+```php
+$this->load->model('Usuarios_model');
+
+$users = $this->Usuarios_model->getAll('sexo = masculino', 'usuarios.nome', 'nome asc'); // Será feita a consulta na tabela `usuarios` atrás das tuplas que possuem o sexo definido como masculino e retornará todos os nomes em ordem crescente.
+
+if($users){
+    foreach ($users as $user) {
+        echo $user['nome'] . '<br>';
+    }
+}
+else{
+    echo 'Usuário não encontrado';
+}
+```
+
+
+Exemplo 3:
+
+```php
+$this->load->model('Usuarios_model');
+
+$users = $this->Usuarios_model->getAll(false, 'usuarios.nome', 'nome asc'); // Será feita a consulta na tabela `usuarios` e retornara todos os nomes dos usuarios ordenados pelo nome crescente.
+
+if($users){
+    foreach ($users as $user) {
+        echo $user['nome'] . '<br>';
+    }
+}
+else{
+    echo 'Usuário não encontrado';
+}
+```
+
+
 - getAllLimit
  ```php
-	/**
-	 * getAllLimit
-	 * 
-	 * @param int $limit [Inteiro que define a quantidade máxima de resultados da consulta]
-	 * @return Array[] [Retorna a coleção de dados requisitadas em uma matriz]	  
-	 * 
-	 */
+    /**
+     * getAllLimit
+     * 
+     * @param int $limit [Inteiro que define a quantidade máxima de resultados da consulta]
+     * @return Array[] [Retorna a coleção de dados requisitadas em uma matriz]    
+     * 
+     */
     public function getAllLimit($limit){
         $this->db->from($this->table)
         ->select('*')
@@ -868,6 +996,25 @@ Basicamente a mágica acontece ao utilizar-se do conceito de herança da *Progra
 
     }
 ```
+
+Exemplo:
+
+```php
+$this->load->model('Usuarios_model');
+
+$users = $this->Usuarios_model->getAllLimit(5); // Será feita a consulta na tabela `usuarios` e retornará as 5 primeiras linhas.
+
+if($users){
+    foreach ($users as $user) {
+        echo $user['nome'] . '<br>';
+    }
+}
+else{
+    echo 'Usuário não encontrado';
+}
+```
+
+> Esta função foi feita apenas para auxiliar no desenvolvimento da aplicação, para que quando você deseje testar uma listagem de dados possa limitar a quantidade de resultados, porém sem poder filtra-los.
 
 - Exemplo: Model para tabela de `usuarios` cuja a chave primária é `id_usuario`
 
