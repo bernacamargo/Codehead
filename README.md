@@ -1114,8 +1114,45 @@ O arquivo `application/views/components/alerts` contém a ligação entre o `PHP
 
 > A função `notifyUser()` está definida em `assets/js/functions.js`
 
+Existem duas formas de se exibir uma notificação para o usuário
+
+* PHP
+
+No controller após realizar a lógica e antes do `redirect()` deve-se criar uma session flashdata com o index definido como um dos cinco tipos citados abaixo.
+
+```php
+$this->session->set_flashdata('success', 'Muito bom, sua ação foi concluída com sucesso!');
+```
+
+* Javascript
+
+Em qualquer view basta chamar a função `notifyUser` passando como primeiro parâmetro o tipo da notificação e segundo a mensagem que desejar.
+
+```javascript
+notifyUser('success', 'Muito bom, sua ação foi concluída com sucesso!');
+```
+
 Existem cinco tipos de notificações pré-definidas: `success`, `error`, `warning`, `info` e `loading`.
 
+* success:
+
+Deve ser utilizada para notificações positivas, ou seja, como o próprio nome diz, de sucesso.
+
+* error:
+
+Deve ser utilizada para notificações de erros ou falhas do sistema
+
+* warning:
+
+Deve ser utilizada para notificações de atenção ao usuário
+
+* info:
+
+Deve ser utilizada para dar informações extras ao usuário
+
+* loading:
+
+Deve ser utilizada para funções que utilizem `ajax` chamando a função `notifyUser` na `beforeSend()`.
 
 
 ### Plugins JS
