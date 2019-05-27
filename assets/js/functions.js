@@ -30,13 +30,11 @@ function notifyUser(type, text, delay = 8000) {
 		type = 'info';
 		title = "Loading...";
 	  break;
-
 	}
 
 	new PNotify({
 	  text: text,
 	  title: icon + title,
-	  // icons: 'fontawesome4',
 	  icon: false,
 	  styling: 'brighttheme',
 	  type: type,
