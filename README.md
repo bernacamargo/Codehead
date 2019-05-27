@@ -686,7 +686,7 @@ echo $this->guard->getShortName(); // Bernardo Camargo
     }
 ```
 
-  * Exemplo:
+Exemplo:
 
 ```php
 $this->guard->logout();
