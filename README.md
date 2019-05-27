@@ -730,6 +730,37 @@ Basicamente a mágica acontece ao utilizar-se do conceito de herança da *Progra
 ***É obrigatório a inicialização destas em todos os models que herdarem esta classe.**
 
 
+- Exemplo: Model para tabela de `usuarios` cuja a chave primária é `id_usuario`
+
+```php
+class Usuarios_model extends MY_Model {
+
+    /**
+    * table
+    *
+    * nome da tabela no model
+    *
+    * @protected
+    */
+    protected $table = 'usuarios';
+
+    /**
+    * table_id
+    *
+    * chave da tabela no model
+    *
+    * @protected
+    */
+    protected $table_id = 'id_usuario';
+
+    // metodo construtor
+    public function __construct() {
+        parent::__construct();
+    }
+}
+```
+
+
 #### Métodos
 - create
  ```php
@@ -1016,35 +1047,6 @@ else{
 
 > Esta função foi feita apenas para auxiliar no desenvolvimento da aplicação, para que quando você deseje testar uma listagem de dados possa limitar a quantidade de resultados, porém sem poder filtra-los.
 
-- Exemplo: Model para tabela de `usuarios` cuja a chave primária é `id_usuario`
-
-```php
-class Usuarios_model extends MY_Model {
-
-    /**
-    * table
-    *
-    * nome da tabela no model
-    *
-    * @protected
-    */
-    protected $table = 'usuarios';
-
-    /**
-    * table_id
-    *
-    * chave da tabela no model
-    *
-    * @protected
-    */
-    protected $table_id = 'id_usuario';
-
-    // metodo construtor
-    public function __construct() {
-        parent::__construct();
-    }
-}
-```
 
 ### Plugins JS
 Localizados em `assets/vendors/`
