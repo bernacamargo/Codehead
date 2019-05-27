@@ -7,9 +7,9 @@ Faça o download como ZIP ou clone o repósitorio em seu ambiente local, em segu
 
 ## Configuração
 ### Config.php
-Configure o base url em application/config/config.php
+Configure o base url em `application/config/config.php`
 
-- Troque 'yourapp' pelo nome do seu aplicativo local
+- Troque `yourapp` pelo nome do seu aplicativo local
 
 ```php
 $config['base_url'] = 'http://localhost/yourapp'
@@ -528,7 +528,7 @@ class Guard {
         return $this->user ? true : false;
     }
 ```
-Exemplo:
+Exemplo
   ```php
   if($this->guard->logged()){
     echo 'Usuário logado';
@@ -554,7 +554,7 @@ Exemplo:
     }
 ```
 
-Exemplo:
+Exemplo
   ```php
 $nome = $this->guard->item('nome');
 echo $nome;
@@ -592,7 +592,7 @@ echo $nome;
     }
 ```
 
-Exemplo:
+Exemplo
 
 ```php
 $email = 'bernardopcamargo@gmail.com';
@@ -639,7 +639,7 @@ else{
     }
 ```
 
-Exemplo:
+Exemplo
 
 ```php
 echo $this->guard->item('nome'); // Bernardo Pinheiro Camargo
@@ -676,7 +676,7 @@ echo $this->guard->item('nome'); // Bernardo
     }
 ```
 
-Exemplo:
+Exemplo
 
 ```php
 echo $this->guard->item('nome'); // Bernardo Pinheiro Camargo
@@ -698,7 +698,7 @@ echo $this->guard->getShortName(); // Bernardo Camargo
     }
 ```
 
-Exemplo:
+Exemplo
 
 ```php
 $this->guard->logout();
@@ -744,7 +744,7 @@ O `$table`(nome da tabela) e `$table_id`(chave primária) são atributos essenci
 > É obrigatório a inicialização destas variáveis **em todos os models** que herdarem esta classe.
 
 
-- Exemplo: Model para tabela de `usuarios` cuja a chave primária é `id_usuario`
+- Exemplo Model para tabela de `usuarios` cuja a chave primária é `id_usuario`
 
 ```php
 class Usuarios_model extends MY_Model {
@@ -790,7 +790,7 @@ class Usuarios_model extends MY_Model {
         return $this->db->insert( $this->table, $dados );
     }
 ```
-Exemplo:
+Exemplo
 
  ```php
 $this->load->model('Usuarios_model');
@@ -835,7 +835,7 @@ else{
         return $this->db->update($this->table, $dados); 
     }
 ```
-Exemplo:
+Exemplo
 
  ```php
 $this->load->model('Usuarios_model');
@@ -1042,7 +1042,7 @@ else{
     }
 ```
 
-Exemplo:
+Exemplo
 
 ```php
 $this->load->model('Usuarios_model');
