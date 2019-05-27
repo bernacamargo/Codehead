@@ -31,19 +31,8 @@ $config['bootstrap'] = [
     ]
 ];
 
-// Plugins localizados na pasta assets/vendors
-$config['vendors'] = [
-    'css' => [
 
-    ],
-
-    'js' => [
-        
-    ]
-];
-
-
-// Notificação
+// Notificação carregada por default
 $config['pnotify'] = [
     'css'   =>  [
         site_url('assets/vendors/pnotify/dist/pnotify.css'), 
@@ -69,6 +58,31 @@ $config['pnotify'] = [
 
     ]
 ];
+
+
+
+
+/**
+ * ================================
+ * ALTERAR SOMENTE OS ARRAYS ABAIXO
+ * ================================
+ */
+
+
+
+
+// Plugins localizados na pasta assets/vendors
+$config['vendors'] = [
+    'css' => [
+
+    ],
+
+    'js' => [
+
+    ]
+];
+
+
 
 // Ultimo módule a ser carregado
 $config['custom'] = [
