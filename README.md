@@ -1,9 +1,10 @@
 # Template Codeigniter 3.1.10
-[![Latest Stable Version](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/v/stable)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 [![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 [![License](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 
-Esse é um template com otimizações voltadas para a reutilização de código.
+Esse é um template com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. 
+
+** Nota: O MY_Model não substitui o [Query Builder](https://www.codeigniter.com/userguide3/database/query_builder.html), então se você tem que usar alguma query complexa, não utilize o MY_Model para isso. **
 
 ## Sumário
 * [Instalando](#instalando)
