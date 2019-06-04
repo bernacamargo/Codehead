@@ -295,7 +295,7 @@ class Usuario extends MY_Controller {
 Exemplo:
 
 ```php
-$usuarios = $this->template->item('usuarios'); //Armazena em $usuarios os usuarios adicionados anteriormente no controller
+$usuarios = $this->template->item('usuarios'); //Armazena em $usuarios os dados adicionados anteriormente no controller
 
 foreach ($usuarios as $user) {
     echo $user['nome'] . '<br>';
@@ -349,7 +349,7 @@ class Home extends MY_Controller {
     }
 ```
 
-> Essa função deve ser utilizada nas views para printar o titulo da página uma vez que este tenha sido definido no controller pela função `set_title`. Normalmente é chamada na view `master.php` a qual carrega a estrutura do HTML.
+> Essa função deve ser utilizada nas views para printar o titulo da página uma vez que este tenha sido definido no controller pela função `set_title`. Deve ser chamada na view `master.php` a qual carrega a estrutura do HTML.
 
 Exemplo
 
@@ -385,7 +385,7 @@ Exemplo
     }
 ```
 
-> Essa função deve ser utilizada nas views para imprimir na tela os arquivos JS definidos nos [Assets](#assets). Normalmente é chamada na view `master.php` a qual carrega a estrutura do HTML.
+> Essa função deve ser utilizada nas views para imprimir na tela os arquivos JS definidos nos [Assets](#assets). Deve ser chamada na view `master.php` a qual carrega a estrutura do HTML.
 
 Exemplo:
 
@@ -412,7 +412,7 @@ Exemplo:
         foreach( $this->css as $css ) echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';
     }
 ```
-> Essa função deve ser utilizada nas views para imprimir na tela os arquivos CSS definidos nos [Assets](#assets). Normalmente é chamada na view `master.php` a qual carrega a estrutura do HTML.
+> Essa função deve ser utilizada nas views para imprimir na tela os arquivos CSS definidos nos [Assets](#assets). Deve ser chamada na view `master.php` a qual carrega a estrutura do HTML.
 
 Exemplo:
 
