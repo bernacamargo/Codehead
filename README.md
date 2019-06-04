@@ -3,13 +3,15 @@
 Esse é um template com otimizações voltadas para a reutilização de código.
 
 ## Table of contents
-* [Instalação](#instalação)
+* [Instalando](#instalando)
+* [Configurando](#configurando)
+* [Assets](#assets)
 
 
-## Instalação
+## Instalando
 Faça o download como ZIP ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la.
 
-## Configuração
+## Configurando
 ### Config.php
 Configure o base url em `application/config/config.php`
 
