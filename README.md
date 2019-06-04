@@ -4,7 +4,7 @@
 
 Esse é um template com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. 
 
-** Nota: O MY_Model não substitui o [Query Builder](https://www.codeigniter.com/userguide3/database/query_builder.html), então se você tem que usar alguma query complexa, não utilize o MY_Model para isso. **
+**Nota: O MY_Model não substitui o [Query Builder](https://www.codeigniter.com/userguide3/database/query_builder.html), então se você tem que usar alguma query complexa, não utilize o MY_Model para isso.**
 
 ## Sumário
 * [Instalando](#instalando)
