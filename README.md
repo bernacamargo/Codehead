@@ -287,7 +287,7 @@ class Usuario extends MY_Controller {
     }
 ```
 
-> Essa função deve ser utilizada nas views para recuperar informações passadas pelo controller
+> Essa função deve ser utilizada nas views para recuperar informações passadas pelo controller.
 
 Exemplo:
 
@@ -315,7 +315,7 @@ foreach ($usuarios as $user) {
     }
 ```
 
-> Essa função deve ser utilizada nos controllers para definir o título da página que será carregada
+> Essa função deve ser utilizada nos controllers para definir o título da página que será carregada.
 
 Exemplo
 
@@ -324,7 +324,6 @@ class Home extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Usuarios_model');
     }
 
     public function index(){
@@ -350,6 +349,24 @@ class Home extends MY_Controller {
 > Essa função deve ser utilizada nas views para printar o titulo da página uma vez que este tenha sido definido no controller pela função `set_title`. Normalmente é chamada na view `master.php` a qual carrega a estrutura do HTML.
 
 Exemplo
+
+```HTML
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Language" content="pt-br">
+  
+        <!-- TITLE -->
+        <title><?PHP $template->print_title(); ?></title>
+        .
+        .
+        .
+```
 
 - print_js()
 ```php
