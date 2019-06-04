@@ -165,7 +165,7 @@ $config['custom'] = [
 ];
 ```
 
-## Librarie Template
+## Biblioteca Template
 
 ```php
 class Template {
@@ -649,7 +649,7 @@ Exemplo:
 
 
 
-## Librarie Guard
+## Biblioteca Guard
 
 Essa biblioteca tem como função facilitar a manipulação da variável de sessão do usuário.
 
