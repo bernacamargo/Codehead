@@ -1,7 +1,6 @@
 {
 	"description": "Template for the CodeIgniter framework",
 	"name": "bernacamargo/template_codeigniter-3.1.10",
-	"version": "1.0",
 	"type": "project",
 	"license": "MIT",
 	"support": {
