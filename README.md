@@ -49,13 +49,31 @@ $db['default'] = array(
 
 Configure a source de todos os import `.js` e `.css` em `application/config/assets.php`
 
-- Defina a ordem, da esquerda para a direita, em que os assets serão carregados. Note que os arquivos `functions.js` e `style.css` devem ser carregados por último
+- No array `$config['default']` configure a ordem, da esquerda para a direita, em que os assets serão carregados. Note que os arquivos `functions.js` e `style.css` devem ser carregados por último. É válido freezar que os assets apenas serão carregados caso sejam definidos nesse array.
 
 ```php
 $config['default'] = ['bootstrap', 'vendors', 'pnotify', 'custom'];
 ```
 
-- Defina o caminho dos plugins a serem utilizados sempre respeitando a estrutura dos arrays
+- Defina o caminho dos plugins a serem utilizados sempre respeitando a estrutura dos arrays e adicionando o nome deste ao default.
+
+```php
+$config['array_name'] = [
+    'css'   =>  [
+        'path/to/css/file1';
+        'path/to/css/file2';
+        'path/to/css/file3';
+    ],
+    'js'    =>  [
+        'path/to/js/file1';
+        'path/to/js/file2';
+        'path/to/js/file3';
+    ]
+];
+```
+
+
+#### Load default
 
 ```php
 // Bootstrap 4.3.1
