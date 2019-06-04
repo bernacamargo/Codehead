@@ -2,7 +2,7 @@
 [![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 [![License](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 
-Esse é um template com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. 
+Esse é um template com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Neste utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery](https://jquery.com/)
 
 
 ## Sumário
