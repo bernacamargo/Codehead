@@ -252,6 +252,8 @@ class Template {
     }
 ```
 
+> Essa função deve ser utilizada nos controllers para enviar informação para as views
+
 Exemplo
 
 ```php
@@ -269,7 +271,6 @@ class Usuario extends MY_Controller {
 }
 ```
 
-> Essa função é para ser utilizada nos controllers para enviar informação para as views
 
 - item()
 ```php
@@ -286,6 +287,8 @@ class Usuario extends MY_Controller {
     }
 ```
 
+> Essa função deve ser utilizada nas views para recuperar informações passadas pelo controller
+
 Exemplo:
 
 ```php
@@ -296,7 +299,6 @@ foreach ($usuarios as $user) {
 }
 ```
 
-> Essa função é para ser utilizada nas views para recuperar informações passadas pelo controller
 
 - set_title()
 ```php
@@ -312,6 +314,8 @@ foreach ($usuarios as $user) {
         $this->title = $title;
     }
 ```
+
+> Essa função deve ser utilizada nos controllers para definir o título da página que será carregada
 
 Exemplo
 
@@ -329,8 +333,6 @@ class Home extends MY_Controller {
 }
 ```
 
-> Essa função é para ser utilizada nos controllers para definir o título da página que será carregada
-
 - print_title()
 ```php
     /**
@@ -345,7 +347,9 @@ class Home extends MY_Controller {
     }
 ```
 
-> Essa função é para ser utilizada nas views para printar o titulo da página. Normalmente é chamada na view `master.php`.
+> Essa função deve ser utilizada nas views para printar o titulo da página uma vez que este tenha sido definido no controller pela função `set_title`. Normalmente é chamada na view `master.php` a qual carrega a estrutura do HTML.
+
+Exemplo
 
 - print_js()
 ```php
