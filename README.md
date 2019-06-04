@@ -10,7 +10,7 @@ Esse é um template com otimizações voltadas para a reutilização de código.
 * [Guard](#librarie-guard)
 * [MY_Model](#classe-my_model)
 * [Notificação](#notificações)
-
+* [Plugins JS](#plugins-js)
 
 ## Instalando
 Faça o download como ZIP ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la.
@@ -1093,7 +1093,7 @@ else{
 
 ### Notificações
 
-O sistema de notificações deste template utiliza a biblioteca js [PNotify](https://sciactive.com/pnotify/) juntamente com a função [Session flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
+O sistema de notificações deste template utiliza a biblioteca js [PNotify](https://sciactive.com/pnotify/) juntamente com a função nativa do CI [SESSION Flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
 
 O arquivo `application/views/components/alerts` contém a ligação entre o `PHP` e o `Javascript`:
 
@@ -1147,7 +1147,7 @@ Existem duas formas de se exibir uma notificação para o usuário
 
 * PHP
 
-No controller após realizar a lógica e antes do `redirect()` deve-se criar uma session flashdata com o index definido como um dos cinco tipos citados abaixo.
+No controller, antes do `redirect()`, deve-se criar uma session flashdata com o index definido como sendo um dos cinco tipos citados abaixo.
 
 ```php
 $this->session->set_flashdata('success', 'Muito bom, sua ação foi concluída com sucesso!');
