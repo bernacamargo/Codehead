@@ -2,18 +2,19 @@
 
 Esse é um template com otimizações voltadas para a reutilização de código.
 
-## Table of contents
+## Sumário
 * [Instalando](#instalando)
 * [Configurando](#configurando)
 * [Assets](#assets)
 * [Template](#librarie-template)
 * [Guard](#librarie-guard)
 * [MY_Model](#classe-my_model)
-* [Notificação](#notificações)
+* [Notificação(PNotify)](#notificações)
 * [Plugins JS](#plugins-js)
+* [License](#license)
 
 ## Instalando
-Faça o download como ZIP ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la.
+Faça o download como ZIP ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la para desenvolver sua aplicação.
 
 ## Configurando
 ### Config.php
