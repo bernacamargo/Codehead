@@ -154,6 +154,22 @@ class MY_Model extends CI_Model {
 
     }
 
+    /**
+     * count
+     *
+     * @return Integrer [Retorna a quantidade de registros resultantes]
+     */
+    public function count($where){
+
+    	$this->db->from($this->table)
+    	->select('*')
+    	->where($where);
+
+    	$busca = $this->db->get();
+
+    	return $busca->num_rows();
+    }
+
 	/**
 	* table
 	* 
