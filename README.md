@@ -6,7 +6,10 @@ Esse é um template com otimizações voltadas para a reutilização de código.
 * [Instalando](#instalando)
 * [Configurando](#configurando)
 * [Assets](#assets)
-* [Librarie Template](#librarietemplate)
+* [Template](#librarie-template)
+* [Guard](#librarie-guard)
+* [MY_Model](#classe-my_model)
+* [Notificação](#notificacao)
 
 
 ## Instalando
