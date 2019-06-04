@@ -9,7 +9,7 @@ Esse é um template com otimizações voltadas para a reutilização de código.
 * [Template](#librarie-template)
 * [Guard](#librarie-guard)
 * [MY_Model](#classe-my_model)
-* [Notificação](#notificacao)
+* [Notificação](#notificações)
 
 
 ## Instalando
