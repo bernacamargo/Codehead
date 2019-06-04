@@ -1,5 +1,7 @@
 # Template Codeigniter 3.1.10
-
+[![Latest Stable Version](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/v/stable)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
+[![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
+[![License](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 
 Esse é um template com otimizações voltadas para a reutilização de código.
 
@@ -235,7 +237,7 @@ class Template {
 * render()
 
 
-### Métodos mais utilizados
+### Métodos principais
 
 - set()
 ```php
@@ -454,6 +456,9 @@ Exemplo:
         $this->ci->load->view( 'components/'.$component, $var);
     }
 ```
+
+> Essa função deve ser utilizada nas views para imprimir um componente existente em `application/views/components/`
+
 - print_page()
 ```php
     /**
@@ -473,6 +478,9 @@ Exemplo:
         $this->ci->load->view( 'pages/'.$this->p_page );
     }
 ```
+
+> Essa função deve ser utilizada nas views para imprimir uma página existente em `application/views/pages/`
+
 - render()
 ```php
     /**
