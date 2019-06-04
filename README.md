@@ -229,7 +229,6 @@ class Template {
         $this->title = $title;
     }
 ```
-
 - print_title()
 ```php
     /**
@@ -243,7 +242,6 @@ class Template {
         echo $this->title;
     }
 ```
-
 - loadDefault()
 ```php
     /**
@@ -262,7 +260,6 @@ class Template {
         $this->modules = array_merge( $this->modules, $default );
     }
 ```
-
 - use_module()
 ```php
     /**
@@ -278,7 +275,71 @@ class Template {
         $this->modules[] = $module;
     }
 ```
+- loadModules()
+```php
+    /**
+     * loadModules
+     *
+     * Carrega os modulos
+     * 
+     * @return void
+     */
+    public function loadModules(){
 
+        // pega os modulos
+        $modules = array_unique( $this->modules );
+
+        // percorre todos os modulos
+        foreach( $modules as $module ) {
+
+            // carrega os arquivos de configuração
+            $config = $this->ci->config->item( $module );
+
+            // verifica se existem css
+            if ( isset( $config['css'] ) ) {
+                foreach ( $config['css'] as $css ) {
+                    $this->addCss( $css );
+                }
+            }
+
+            // verifica se existem js
+            if ( isset( $config['js'] ) ) {
+                foreach ( $config['js'] as $js ) {
+                    $this->addJs( $js );
+                }
+            }
+        }
+    }
+```
+- set()
+```php
+    /**
+     * set
+     *
+     * seta o valor para uma variavel
+     * 
+     * @param String $chave
+     * @param String $valor
+     * @return void
+     */
+    public function set( $chave, $valor ) {
+        $this->data[$chave] = $valor;
+    }
+```
+- item()
+```php
+    /**
+     * item
+     *
+     * pega o valor de uma varivel
+     * 
+     * @param  String
+     * @return mixed [Retorna o objeto do array indicado pela $chave ou null caso não exista]
+     */
+    public function item( $chave ) {
+        return ( isset( $this->data[$chave] ) ) ? $this->data[$chave] : null;
+    }
+```
 - addCss()
 ```php
     /**
@@ -307,6 +368,32 @@ class Template {
         $this->js[] = $js;
     }
 ```
+- print_js()
+```php
+    /**
+     * print_js
+     *
+     * Imprime o js
+     * 
+     * @return void
+     */
+    public function print_js() {
+        foreach( $this->js as $js ) echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
+    }
+```
+- print_css()
+```php
+    /**
+     * print_css
+     *
+     * Imprime o css
+     * 
+     * @return void
+     */
+    public function print_css() {
+        foreach( $this->css as $css ) echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';
+    }
+```
 - view()
 ```php
     /**
@@ -322,37 +409,6 @@ class Template {
         $this->view[$chave] = $view;
     }
 ```
-- set()
-```php
-    /**
-     * set
-     *
-     * seta o valor para uma variavel
-     * 
-     * @param String $chave
-     * @param String $valor
-     * @return void
-     */
-    public function set( $chave, $valor ) {
-        $this->data[$chave] = $valor;
-    }
-```
-
-- item()
-```php
-    /**
-     * item
-     *
-     * pega o valor de uma varivel
-     * 
-     * @param  String
-     * @return mixed [Retorna o objeto do array indicado pela $chave ou null caso não exista]
-     */
-    public function item( $chave ) {
-        return ( isset( $this->data[$chave] ) ) ? $this->data[$chave] : null;
-    }
-```
-
 - print_view()
 ```php
     /**
@@ -418,71 +474,6 @@ class Template {
 
         // carrega a pagina
         $this->ci->load->view( 'pages/'.$this->p_page );
-    }
-```
-
-- loadModules()
-```php
-    /**
-     * loadModules
-     *
-     * Carrega os modulos
-     * 
-     * @return void
-     */
-    public function loadModules(){
-
-        // pega os modulos
-        $modules = array_unique( $this->modules );
-
-        // percorre todos os modulos
-        foreach( $modules as $module ) {
-
-            // carrega os arquivos de configuração
-            $config = $this->ci->config->item( $module );
-
-            // verifica se existem css
-            if ( isset( $config['css'] ) ) {
-                foreach ( $config['css'] as $css ) {
-                    $this->addCss( $css );
-                }
-            }
-
-            // verifica se existem js
-            if ( isset( $config['js'] ) ) {
-                foreach ( $config['js'] as $js ) {
-                    $this->addJs( $js );
-                }
-            }
-        }
-    }
-```
-
-- print_js()
-```php
-    /**
-     * print_js
-     *
-     * Imprime o js
-     * 
-     * @return void
-     */
-    public function print_js() {
-        foreach( $this->js as $js ) echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
-    }
-```
-
-- print_css()
-```php
-    /**
-     * print_css
-     *
-     * Imprime o css
-     * 
-     * @return void
-     */
-    public function print_css() {
-        foreach( $this->css as $css ) echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';
     }
 ```
 
