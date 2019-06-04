@@ -4,7 +4,6 @@
 
 Esse é um template com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. 
 
-**Nota: O MY_Model não substitui o [Query Builder](https://www.codeigniter.com/userguide3/database/query_builder.html), então se você tem que usar alguma query complexa, não utilize o MY_Model para isso.**
 
 ## Sumário
 * [Instalando](#instalando)
@@ -876,6 +875,9 @@ $this->guard->logout();
 Localizada em `application/core/MY_Model.php`
 
 Essa classe é responsável por permitir a reutilização de funções que são comuns em aplicações web que utilizam SQL para manipular um banco de dados.
+
+**Nota: O MY_Model não substitui o [Query Builder](https://www.codeigniter.com/userguide3/database/query_builder.html), então se você tem que usar alguma query complexa, não utilize o MY_Model para isso.**
+
 
 ```php
 class MY_Model extends CI_Model {
