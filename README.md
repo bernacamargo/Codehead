@@ -215,6 +215,25 @@ class Template {
 
 ### Métodos
 
+* set_title()
+* print_title()
+* loadDefault()
+* use_module()
+* loadModules()
+* set()
+* item()
+* addCss()
+* addJs()
+* print_js()
+* print_css()
+* view()
+* print_view()
+* page()
+* print_component()
+* print_page()
+* render()
+
+
 - set_title()
 ```php
     /**
@@ -454,7 +473,6 @@ class Template {
         $this->ci->load->view( 'components/'.$component, $var);
     }
 ```
-
 - print_page()
 ```php
     /**
@@ -474,7 +492,6 @@ class Template {
         $this->ci->load->view( 'pages/'.$this->p_page );
     }
 ```
-
 - render()
 ```php
     /**
