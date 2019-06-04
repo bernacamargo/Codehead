@@ -1,4 +1,5 @@
 # Template Codeigniter 3.1.10
+[![Build Status](https://travis-ci.org/bernacamargo/template_codeigniter-3.1.10.svg?branch=master)](https://travis-ci.org/bernacamargo/template_codeigniter-3.1.10)
 
 Esse é um template com otimizações voltadas para a reutilização de código.
 
