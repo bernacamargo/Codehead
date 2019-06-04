@@ -8,9 +8,9 @@ Esse é um template com otimizações voltadas para evitar a repetição de cód
 ## Sumário
 * [Instalando](#instalando)
 * [Configurando](#configurando)
-* [Assets](#assets)
-* [Template](#librarie-template)
-* [Guard](#librarie-guard)
+* [Biblioteca Assets](#assets)
+* [Biblioteca Template](#librarie-template)
+* [Biblioteca Guard](#librarie-guard)
 * [MY_Model](#classe-my_model)
 * [Notificação(PNotify)](#notificações)
 * [Plugins JS](#plugins-js)
