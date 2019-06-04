@@ -3,7 +3,7 @@
 [![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 [![Licença](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 
-Esse é um template com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Neste utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery](https://jquery.com/), [PNotify](https://sciactive.com/pnotify/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e bibliotecas para manipular funções do [Codeigniter 3.1.10](https://www.codeigniter.com/user_guide/).
+É uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Neste utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery](https://jquery.com/), [PNotify](https://sciactive.com/pnotify/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [bibliotecas](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter 3.1.10](https://www.codeigniter.com/user_guide/).
 
 
 ## Sumário
