@@ -423,7 +423,6 @@ class Template {
         $this->ci->load->view( $view );
     } 
 ```
-
 - page()
 ```php
     /**
@@ -438,7 +437,6 @@ class Template {
         $this->p_page = $page;
     }
 ```
-
 - print_component()
 ```php
     /**
