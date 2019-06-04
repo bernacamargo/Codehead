@@ -1,7 +1,7 @@
 # Template Codeigniter 3.1.10
 [![Latest Stable Version](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/v/stable)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 [![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
-[![License](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
+[![Licença](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 
 Esse é um template com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Neste utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery](https://jquery.com/)
 
@@ -15,7 +15,7 @@ Esse é um template com otimizações voltadas para evitar a repetição de cód
 * [MY_Model](#classe-my_model)
 * [Notificação(PNotify)](#notificações)
 * [Plugins JS](#plugins-js)
-* [License](#license)
+* [Licença](#license)
 
 ## Instalando
 Faça o download como ZIP ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la para desenvolver sua aplicação.
@@ -1456,7 +1456,7 @@ Localizados em `assets/vendors/`
 
 ## Contribuição
 Desenvolvido por Bernardo Camargo [@bernacamargo](https://github.com/bernacamargo)
+ 
 
-
-## License
+## Licença
 [MIT](https://choosealicense.com/licenses/mit/)
