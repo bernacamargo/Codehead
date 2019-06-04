@@ -362,7 +362,7 @@ Exemplo
         <meta http-equiv="Content-Language" content="pt-br">
   
         <!-- TITLE -->
-        <title><?PHP $template->print_title(); ?></title>
+        <title><?PHP $template->print_title(); ?></title> <!-- Exibe na tela o title setado no controller -->
         .
         .
         .
@@ -381,6 +381,21 @@ Exemplo
         foreach( $this->js as $js ) echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
     }
 ```
+
+> Essa função deve ser utilizada nas views para imprimir na tela os arquivos JS definidos nos [Assets](#assets). Normalmente é chamada na view `master.php` a qual carrega a estrutura do HTML.
+
+Exemplo:
+
+```HTML
+        .
+        .
+        .
+        <!-- PRINT JS - CONFIG IN config/assets.php -->
+        <?php $template->print_js(); ?>
+    </body>
+</html>
+```
+
 - print_css()
 ```php
     /**
@@ -393,6 +408,32 @@ Exemplo
     public function print_css() {
         foreach( $this->css as $css ) echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';
     }
+```
+> Essa função deve ser utilizada nas views para imprimir na tela os arquivos CSS definidos nos [Assets](#assets). Normalmente é chamada na view `master.php` a qual carrega a estrutura do HTML.
+
+Exemplo:
+
+```HTML
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Language" content="pt-br">
+        
+        <title><?PHP $template->print_title(); ?></title> <!-- Exibe na tela o title setado no controller -->
+
+
+        <?PHP $template->print_css(); ?>
+
+    </head>
+    .
+    .
+    .
+
 ```
 
 - print_component()
