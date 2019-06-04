@@ -56,7 +56,7 @@ $db['default'] = array(
 );
 ```
 
-### Assets
+## Assets
 
 Configure a source de todos os import `.js` e `.css` em `application/config/assets.php`
 
@@ -162,8 +162,7 @@ $config['custom'] = [
 ];
 ```
 
-## Utilitários
-### Librarie Template
+## Librarie Template
 
 ```php
 class Template {
@@ -214,7 +213,7 @@ class Template {
 }
 ```
 
-#### Métodos
+### Métodos
 
 - set_title()
 ```php
@@ -513,7 +512,7 @@ class Template {
 
 
 
-### Librarie Guard
+## Librarie Guard
 
 Essa biblioteca tem como função facilitar a manipulação da variável de sessão do usuário.
 
@@ -542,7 +541,7 @@ class Guard {
     }
 ```
 
-#### Métodos
+### Métodos
 
 - logged()
 
@@ -735,7 +734,7 @@ $this->guard->logout();
 ```
 
 
-### Classe MY_Model
+## MY_Model
 Localizada em `application/core/MY_Model.php`
 
 Essa classe é responsável por permitir a reutilização de funções que são comuns em aplicações web que utilizam SQL para manipular um banco de dados.
@@ -805,7 +804,7 @@ class Usuarios_model extends MY_Model {
 ```
 
 
-#### Métodos
+### Métodos
 - create()
  ```php
     /**
@@ -1092,7 +1091,7 @@ else{
 > Esta função foi feita apenas para auxiliar no desenvolvimento da aplicação, para que quando você deseje testar uma listagem de dados possa limitar a quantidade de resultados, porém sem poder filtra-los.
 
 
-### Notificações
+## Notificações
 
 O sistema de notificações deste template utiliza a biblioteca js [PNotify](https://sciactive.com/pnotify/) juntamente com a função nativa do CI [SESSION Flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
 
@@ -1218,7 +1217,7 @@ $.ajax({
 ```
 
 
-### Plugins JS
+## Plugins JS
 Localizados em `assets/vendors/`
 
 - animate.css
