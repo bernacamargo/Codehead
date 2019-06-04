@@ -504,6 +504,24 @@ Exemplo:
         $this->ci->load->view( $layout, [ 'template' => $this ] );
     }
 ```
+> Essa função deve ser utilizada nos controllers para exibir uma página existente em `application/views/pages/` com seus respectivos módulos de css/js.
+
+Exemplo
+
+```php
+class Home extends MY_Controller {
+
+    public function __construct() {
+        parent::__construct();
+    }
+
+    public function index(){
+        $this->template->set_title("Página inicial"); // Seta o titulo da pagina
+        $this->template->render('master', 'home'); // Carrega a view /views/pages/home.php dentro do layout views/master.php
+    }
+}
+```
+
 
 <!-- 
 - loadDefault()
