@@ -2,6 +2,10 @@
 
 Esse é um template com otimizações voltadas para a reutilização de código.
 
+## Table of contents
+* [Instalando](#instalando)
+
+
 ## Instalação
 Faça o download como ZIP ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la.
 
