@@ -3,7 +3,7 @@
 Esse é um template com otimizações voltadas para a reutilização de código.
 
 ## Table of contents
-* [Instalando](#instalando)
+* [Instalação](#instalação)
 
 
 ## Instalação
