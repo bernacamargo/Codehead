@@ -234,6 +234,39 @@ class Template {
 * render()
 
 
+### Métodos mais utilizados
+
+- set()
+```php
+    /**
+     * set
+     *
+     * seta o valor para uma variavel
+     * 
+     * @param String $chave
+     * @param String $valor
+     * @return void
+     */
+    public function set( $chave, $valor ) {
+        $this->data[$chave] = $valor;
+    }
+```
+
+- item()
+```php
+    /**
+     * item
+     *
+     * pega o valor de uma varivel
+     * 
+     * @param  String
+     * @return mixed [Retorna o objeto do array indicado pela $chave ou null caso não exista]
+     */
+    public function item( $chave ) {
+        return ( isset( $this->data[$chave] ) ) ? $this->data[$chave] : null;
+    }
+```
+
 - set_title()
 ```php
     /**
@@ -261,6 +294,94 @@ class Template {
         echo $this->title;
     }
 ```
+- print_js()
+```php
+    /**
+     * print_js
+     *
+     * Imprime o js
+     * 
+     * @return void
+     */
+    public function print_js() {
+        foreach( $this->js as $js ) echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
+    }
+```
+- print_css()
+```php
+    /**
+     * print_css
+     *
+     * Imprime o css
+     * 
+     * @return void
+     */
+    public function print_css() {
+        foreach( $this->css as $css ) echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';
+    }
+```
+
+- print_component()
+```php
+    /**
+     * page
+     *
+     * carrega um componente
+     * 
+     * @param  String
+     * @param Array $var [Array de dados a serem enviados para a view]
+     * @return void
+     */
+    public function print_component( $component , $var = false) {
+        
+        // carrega a pagina
+        $this->ci->load->view( 'components/'.$component, $var);
+    }
+```
+- print_page()
+```php
+    /**
+     * print_page
+     *
+     * Carrega uma view salva em views/pages/[view].php
+     * 
+     * @param  String
+     * @return void
+     */
+    public function print_page( $page = false ){
+
+        // verifica se o usuário deseja carregar uma pagina em especifico
+        $this->p_page = $page ? $page : $this->p_page;
+
+        // carrega a pagina
+        $this->ci->load->view( 'pages/'.$this->p_page );
+    }
+```
+- render()
+```php
+    /**
+     * render
+     *
+     * Renderiza a página escolhida em um layout escolhido (master.php)
+     * 
+     * @param  String $layout
+     * @param  String $page
+     * @return void
+     */
+    public function render( $layout = false, $page = false ) {
+
+        // carrega os modulos
+        $this->loadModules();
+
+        // verifica se o usuário deseja carregar uma pagina em especifico
+        $this->p_page = $page ? $page : $this->p_page;
+
+        // carrega a view
+        $this->ci->load->view( $layout, [ 'template' => $this ] );
+    }
+```
+
+<!-- 
 - loadDefault()
 ```php
     /**
@@ -330,35 +451,6 @@ class Template {
         }
     }
 ```
-- set()
-```php
-    /**
-     * set
-     *
-     * seta o valor para uma variavel
-     * 
-     * @param String $chave
-     * @param String $valor
-     * @return void
-     */
-    public function set( $chave, $valor ) {
-        $this->data[$chave] = $valor;
-    }
-```
-- item()
-```php
-    /**
-     * item
-     *
-     * pega o valor de uma varivel
-     * 
-     * @param  String
-     * @return mixed [Retorna o objeto do array indicado pela $chave ou null caso não exista]
-     */
-    public function item( $chave ) {
-        return ( isset( $this->data[$chave] ) ) ? $this->data[$chave] : null;
-    }
-```
 - addCss()
 ```php
     /**
@@ -385,32 +477,6 @@ class Template {
      */            
     public function addJs( $js ) {
         $this->js[] = $js;
-    }
-```
-- print_js()
-```php
-    /**
-     * print_js
-     *
-     * Imprime o js
-     * 
-     * @return void
-     */
-    public function print_js() {
-        foreach( $this->js as $js ) echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
-    }
-```
-- print_css()
-```php
-    /**
-     * print_css
-     *
-     * Imprime o css
-     * 
-     * @return void
-     */
-    public function print_css() {
-        foreach( $this->css as $css ) echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';
     }
 ```
 - view()
@@ -455,66 +521,7 @@ class Template {
     public function page( $page ) {
         $this->p_page = $page;
     }
-```
-- print_component()
-```php
-    /**
-     * page
-     *
-     * carrega um componente
-     * 
-     * @param  String
-     * @param Array $var [Array de dados a serem enviados para a view]
-     * @return void
-     */
-    public function print_component( $component , $var = false) {
-        
-        // carrega a pagina
-        $this->ci->load->view( 'components/'.$component, $var);
-    }
-```
-- print_page()
-```php
-    /**
-     * print_page
-     *
-     * Carrega uma view salva em views/pages/[view].php
-     * 
-     * @param  String
-     * @return void
-     */
-    public function print_page( $page = false ){
-
-        // verifica se o usuário deseja carregar uma pagina em especifico
-        $this->p_page = $page ? $page : $this->p_page;
-
-        // carrega a pagina
-        $this->ci->load->view( 'pages/'.$this->p_page );
-    }
-```
-- render()
-```php
-    /**
-     * render
-     *
-     * Renderiza a página escolhida em um layout escolhido (master.php)
-     * 
-     * @param  String $layout
-     * @param  String $page
-     * @return void
-     */
-    public function render( $layout = false, $page = false ) {
-
-        // carrega os modulos
-        $this->loadModules();
-
-        // verifica se o usuário deseja carregar uma pagina em especifico
-        $this->p_page = $page ? $page : $this->p_page;
-
-        // carrega a view
-        $this->ci->load->view( $layout, [ 'template' => $this ] );
-    }
-```
+``` -->
 
 
 
