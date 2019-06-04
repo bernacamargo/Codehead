@@ -252,6 +252,25 @@ class Template {
     }
 ```
 
+Exemplo
+
+```php
+class Usuario extends MY_Controller {
+
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('Usuarios_model');
+    }
+
+    public function index(){
+        $usuarios = $this->Usuarios_model->getAll(); // busca todos os usuarios no bd
+        $this->template->set("usuarios", $usuarios); // seta os usuarios ($usuarios) encontrados para a posição 'usuarios' do array do template
+    }
+}
+```
+
+> Essa função é para ser utilizada nos controllers para enviar informação para as views
+
 - item()
 ```php
     /**
@@ -267,6 +286,18 @@ class Template {
     }
 ```
 
+Exemplo:
+
+```php
+$usuarios = $this->template->item('usuarios'); //Armazena em $usuarios os usuarios adicionados anteriormente no controller
+
+foreach ($usuarios as $user) {
+    echo $user['nome'] . '<br>';
+}
+```
+
+> Essa função é para ser utilizada nas views para recuperar informações passadas pelo controller
+
 - set_title()
 ```php
     /**
@@ -281,6 +312,25 @@ class Template {
         $this->title = $title;
     }
 ```
+
+Exemplo
+
+```php
+class Home extends MY_Controller {
+
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('Usuarios_model');
+    }
+
+    public function index(){
+        $this->template->set_title("Página inicial"); // Seta o titulo da pagina
+    }
+}
+```
+
+> Essa função é para ser utilizada nos controllers para definir o título da página que será carregada
+
 - print_title()
 ```php
     /**
@@ -294,6 +344,9 @@ class Template {
         echo $this->title;
     }
 ```
+
+> Essa função é para ser utilizada nas views para printar o titulo da página. Normalmente é chamada na view `master.php`.
+
 - print_js()
 ```php
     /**
