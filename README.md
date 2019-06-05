@@ -95,7 +95,7 @@ $config['modulo_name'] = [
 ```
 
 
-#### Pre-load
+#### Carregado por padrão(bootstrap e pnotify)
 
 ```php
 // Bootstrap 4.3.1
@@ -1364,12 +1364,12 @@ $.ajax({
         notifyUser('loading', 'Carregando informações...');
     }
 })
-.done(function() {
+.done(function(response) {
     PNotify.removeAll(); //Remove todas as notificações
 
     console.log("success");
 })
-.fail(function() {
+.fail(function(xhr, status) {
     console.log("error");
 })
 .always(function() {
