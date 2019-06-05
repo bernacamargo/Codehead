@@ -20,7 +20,7 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
 * [MY_Model](#classe-my_model)
 * [Notificação(PNotify)](#notificações)
 * [Plugins JS](#plugins-js)
-* [Licença](#license)
+* [Licença MIT](#license)
 
 ## Instalando
 Faça o [download como ZIP](https://github.com/bernacamargo/codehead/archive/master.zip) ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la para desenvolver sua aplicação.
