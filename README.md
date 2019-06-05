@@ -3,7 +3,7 @@
 [![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 [![Licença](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 
-É uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Nesta utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery](https://jquery.com/), [PNotify](https://sciactive.com/pnotify/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [Bibliotecas PHP](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter](https://www.codeigniter.com/).
+É uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Nesta utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery](https://jquery.com/), [Font-awesome](http://fontawesome.io/icons), [PNotify](https://sciactive.com/pnotify/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [Bibliotecas PHP](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter](https://www.codeigniter.com/).
 
 * Links úteis referente ao Codeigniter 3.1.10
     * [Download](https://github.com/bcit-ci/CodeIgniter/archive/3.1.10.zip)
@@ -1388,79 +1388,63 @@ $.ajax({
 ## Plugins JS
 Localizados em `assets/vendors/`
 
-- animate.css
-- animsition
-- autosize
-- bootstrap
-- bootstrap-datepicker-1.9.0-dist
-- bootstrap-daterangepicker
-- bootstrap-datetimepicker
-- bootstrap-progressbar
-- bootstrap-wysiwyg
-- Chart.js
-- countdowntime
-- cropper
-- css-hamburgers
-- datatables.net
-- datatables.net-bs
-- datatables.net-buttons
-- datatables.net-buttons-bs
-- datatables.net-fixedheader
-- datatables.net-fixedheader-bs
-- datatables.net-keytable
-- datatables.net-responsive
-- datatables.net-responsive-bs
-- datatables.net-scroller
-- datatables.net-scroller-bs
-- DateJS
-- daterangepicker
-- devbridge-autocomplete
-- dropzone
-- echarts
-- eve
-- fastclick
-- Flot
-- flot.curvedlines
-- flot.orderbars
-- flot-spline
-- font-awesome
-- fullcalendar
-- gauge.js
-- google-code-prettify
-- iCheck
-- ion.rangeSlider
-- jquery
-- jquery.easy-pie-chart
-- jquery.hotkeys
-- jquery.inputmask
-- jquery.tagsinput
-- jquery-knob
-- jquery-mousewheel
-- jQuery-Smart-Wizard
-- jquery-sparkline
-- jqvmap
-- kartik-v-bootstrap-fileinput
-- malihu-custom-scrollbar-plugin
-- mjolnic-bootstrap-colorpicker
-- mocha
-- moment
-- morris.js
-- normalize-css
-- nprogress
-- parsleyjs
-- pdfmake
-- perfect-scrollbar
-- pnotify
-- pnotify1
-- raphael
-- requirejs
-- select2
-- skycons
-- smartWizard
-- starrr
-- switchery
-- transitionize
-- validator
+- [animate.css](https://daneden.github.io/animate.css/)
+- [animsition](https://git.blivesta.com/animsition/)
+- [autosize textarea](http://www.jacklmoore.com/autosize/)
+- [bootstrap-4.1.3-dist](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/)
+- [bootstrap-daterangepicker](http://www.daterangepicker.com/)
+- [bootstrap-datetimepicker](https://eonasdan.github.io/bootstrap-datetimepicker/)
+- [bootstrap-wysiwyg](https://mdbootstrap.com/plugins/jquery/wysiwyg/)(Text editor)
+- [Chart.js](https://www.chartjs.org/)
+- [countdown.js](http://countdownjs.org)
+- [cropper](https://fengyuanchen.github.io/cropperjs/)
+- [css-hamburgers](https://jonsuh.com/hamburgers/)
+- [datatables.net](https://datatables.net/)
+- [datatables.net-buttons](https://datatables.net/extensions/buttons)
+- [datatables.net-fixedheader](https://datatables.net/extensions/fixedheader)
+- [datatables.net-keytable](https://datatables.net/extensions/keytable)
+- [datatables.net-responsive](https://datatables.net/extensions/responsive)
+- [datatables.net-scroller](https://datatables.net/extensions/scroller)
+- [DateJS](https://github.com/datejs/Datejs)
+- [devbridge-autocomplete](https://github.com/devbridge/jQuery-Autocomplete)
+- [dropzone](https://www.dropzonejs.com/)(Drag'n'drop files)
+- [eve](http://evejs.com/)
+- [fastclick](https://github.com/ftlabs/fastclick)
+- [Flot](https://www.flotcharts.org/)
+- [flot.curvedlines](http://curvedlines.michaelzinsmaier.de/)
+- [fullcalendar](https://fullcalendar.io/)
+- [gauge.js](https://bernii.github.io/gauge.js/)
+- [google-code-prettify](https://github.com/google/code-prettify)
+- [iCheck](http://icheck.fronteed.com/)
+- [ion.rangeSlider](http://ionden.com/a/plugins/ion.rangeSlider/)
+- [jquery.easy-pie-chart](https://github.com/rendro/easy-pie-chart)
+- [jquery.hotkeys](https://github.com/tzuryby/jquery.hotkeys)
+- [jquery.inputmask](https://github.com/RobinHerbots/Inputmask)
+- [jquery.tagsinput](https://github.com/xoxco/jQuery-Tags-Input)
+- [jquery-knob](http://anthonyterrien.com/demo/knob/)
+- [jquery-mousewheel](https://plugins.jquery.com/mousewheel/)
+- [jQuery-Smart-Wizard](https://github.com/mstratman/jQuery-Smart-Wizard)
+- [jquery-sparkline](https://omnipotent.net/jquery.sparkline/)
+- [jqvmap](https://github.com/10bestdesign/jqvmap)
+- [kartik-v-bootstrap-fileinput](https://github.com/kartik-v/bootstrap-fileinput)
+- [malihu-custom-scrollbar-plugin](https://github.com/malihu/malihu-custom-scrollbar-plugin)
+- [mjolnic-bootstrap-colorpicker](https://github.com/ColorlibHQ/gentelella/tree/master/vendors/mjolnic-bootstrap-colorpicker)
+- [mocha](https://github.com/mochajs/mocha)
+- [moment](https://momentjs.com/)
+- [morris.js](https://morrisjs.github.io/morris.js/)
+- [normalize-css](https://necolas.github.io/normalize.css/)
+- [nprogress](https://ricostacruz.com/nprogress/)
+- [parsleyjs](https://parsleyjs.org/)
+- [pdfmake](http://pdfmake.org/#/)
+- [perfect-scrollbar](https://github.com/mdbootstrap/perfect-scrollbar)
+- [pnotify](https://sciactive.com/pnotify/)
+- [requirejs](https://requirejs.org/)
+- [select2](https://select2.org/)
+- [skycons](https://darkskyapp.github.io/skycons/)
+- [starrr](http://dobtco.github.io/starrr/)
+- [switchery](https://abpetkov.github.io/switchery/)
+- [transitionize](https://github.com/abpetkov/transitionize)
+- [validator](https://validatejs.org/)
 
 
 ## Contribuição
