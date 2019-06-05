@@ -174,6 +174,9 @@ $config['custom'] = [
 
 ## Biblioteca Template
 
+Essa biblioteca tem como função principal auxiliar no fluxo `MVC` e possue métodos para carregar os [assets](#assets)(módulos), renderizar views, definir o `title` da página e carregar informações do `Controller => View`.
+
+
 ```php
 class Template {
 
@@ -530,154 +533,12 @@ class Home extends MY_Controller {
 }
 ```
 
-
-<!-- 
-- loadDefault()
-```php
-    /**
-     * loadDefault
-     *
-     * carrega os módulos padrão
-     * 
-     * @return void
-     */    
-    public function loadDefault() {
-
-        // pega os módulos setados no arquivo de configuracao
-        $default = $this->ci->config->item('default');
-
-        // junta com o que já tem guardado
-        $this->modules = array_merge( $this->modules, $default );
-    }
-```
-- use_module()
-```php
-    /**
-     * use_module
-     *
-     * adiciona um novo modulo a ser carregado
-     * 
-     * @return void
-     */        
-    public function use_module( $module ) {
-
-        // adiciona o módulo
-        $this->modules[] = $module;
-    }
-```
-- loadModules()
-```php
-    /**
-     * loadModules
-     *
-     * Carrega os modulos
-     * 
-     * @return void
-     */
-    public function loadModules(){
-
-        // pega os modulos
-        $modules = array_unique( $this->modules );
-
-        // percorre todos os modulos
-        foreach( $modules as $module ) {
-
-            // carrega os arquivos de configuração
-            $config = $this->ci->config->item( $module );
-
-            // verifica se existem css
-            if ( isset( $config['css'] ) ) {
-                foreach ( $config['css'] as $css ) {
-                    $this->addCss( $css );
-                }
-            }
-
-            // verifica se existem js
-            if ( isset( $config['js'] ) ) {
-                foreach ( $config['js'] as $js ) {
-                    $this->addJs( $js );
-                }
-            }
-        }
-    }
-```
-- addCss()
-```php
-    /**
-     * addCss
-     *
-     * adiciona o css
-     *
-     * @param String $css [SRC to a css file]     
-     * @return void
-     */            
-    public function addCss( $css ) {
-        $this->css[] = $css;
-    }
-```
-- addJs()
-```php
-    /**
-     * addJs
-     *
-     * adiciona o css
-     *
-     * @param String $js [SRC to a js file]
-     * @return void
-     */            
-    public function addJs( $js ) {
-        $this->js[] = $js;
-    }
-```
-- view()
-```php
-    /**
-     * view
-     *
-     * adiciona uma nova view
-     * 
-     * @param  String
-     * @param  String
-     * @return void
-     */
-    public function view( $chave, $view ) {
-        $this->view[$chave] = $view;
-    }
-```
-- print_view()
-```php
-    /**
-     * print_view
-     *
-     * Carrega uma view através do nome do seu arquivo
-     * 
-     * @param  String $view
-     * @return void
-     */
-    public function print_view( $view ) {
-        $this->ci->load->view( $view );
-    } 
-```
-- page()
-```php
-    /**
-     * page
-     *
-     * seta a pagina a ser carregada
-     * 
-     * @param  String
-     * @return void
-     */
-    public function page( $page ) {
-        $this->p_page = $page;
-    }
-``` -->
-
-
-
 ## Biblioteca Guard
 
-Essa biblioteca tem como função facilitar a manipulação da variável de sessão do usuário.
+Essa classe tem como função facilitar a manipulação da variável de sessão do usuário, utiliza-se as funções do [Session Library](https://www.codeigniter.com/user_guide/libraries/sessions.html) do Codeigniter.
+
+> É restrito apenas à sessão de usuário (`$_SESSION['user']` ou `$this->session->user`);
+
 
 ```php
 class Guard {
