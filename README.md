@@ -3,7 +3,12 @@
 [![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 [![Licença](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 
-É uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Nesta utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery](https://jquery.com/), [PNotify](https://sciactive.com/pnotify/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [bibliotecas](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter 3.1.10](https://github.com/bcit-ci/CodeIgniter/archive/3.1.10.zip)([Docs](https://www.codeigniter.com/user_guide/)).
+É uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Nesta utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery](https://jquery.com/), [PNotify](https://sciactive.com/pnotify/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [bibliotecas](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter 3.1.10](https://www.codeigniter.com/).
+
+* Links úteis
+    * [Download code](https://github.com/bcit-ci/CodeIgniter/archive/3.1.10.zip)
+    * [Documentação](https://www.codeigniter.com/user_guide/)
+    * [Github](https://github.com/bcit-ci/CodeIgniter/tree/3.1-stable)
 
 
 ## Sumário
@@ -18,11 +23,11 @@
 * [Licença](#license)
 
 ## Instalando
-Faça o download como ZIP ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la para desenvolver sua aplicação.
+Faça o [download como ZIP(https://github.com/bernacamargo/codehead/archive/master.zip)] ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la para desenvolver sua aplicação.
 
 ## Configurando
 ### Config.php
-Configure o base url em `application/config/config.php`
+Configure o base_url em `application/config/config.php`
 
 - Troque `yourapp` pelo nome do seu aplicativo local
 
