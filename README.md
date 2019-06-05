@@ -75,6 +75,8 @@ Configure a source de todos os import `.js` e `.css` em `application/config/asse
 $config['default'] = ['bootstrap', 'vendors', 'pnotify', 'custom'];
 ```
 
+> O indice `custom` deve estar **sempre** na última posição do vetor.
+
 - Defina o caminho dos plugins a serem utilizados sempre respeitando a estrutura dos arrays(como no exemplo a seguir) e adicionando o nome deste ao `$config['default']`(como mostrado a cima).
 
 ```php
