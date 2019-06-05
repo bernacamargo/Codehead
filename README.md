@@ -23,7 +23,7 @@
 * [Licença](#license)
 
 ## Instalando
-Faça o [download como ZIP(https://github.com/bernacamargo/codehead/archive/master.zip)] ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la para desenvolver sua aplicação.
+Faça o [download como ZIP](https://github.com/bernacamargo/codehead/archive/master.zip) ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la para desenvolver sua aplicação.
 
 ## Configurando
 ### Config.php
