@@ -1352,12 +1352,6 @@ Deve ser utilizada para dar informações extras ao usuário
 Deve ser utilizada para funções que utilizem `ajax` chamando a função `notifyUser` na `beforeSend()` para que passe para o usuário a sensação de que algo está acontecendo visto que o `ajax` é dinâmico e não é percebido pelo usuário final.
 
 
-Para fazer com que as notificações desapareçam basta usar a função do PNotify:
-
-```javascript
-PNotify.removeAll();
-```
-
 Exemplo de notificação `loading`:
 
 ```javascript
@@ -1382,6 +1376,14 @@ $.ajax({
     console.log("complete");
 });
 
+```
+
+* Remover as notificações ativas
+
+Para fazer com que as notificações desapareçam basta usar a função do PNotify:
+
+```javascript
+PNotify.removeAll();
 ```
 
 
