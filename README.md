@@ -1256,14 +1256,14 @@ else{
 }
 ```
 
-> Esta função foi feita apenas para auxiliar no desenvolvimento da aplicação, para que quando você deseje testar uma listagem de dados possa limitar a quantidade de resultados, porém sem poder filtra-los.
+> Esta função foi feita apenas para auxiliar no desenvolvimento da aplicação, dificilmente você usará ela em produção. Deve ser utilizada quando você queira testar uma listagem de dados e possa limitar a quantidade de resultados, porém sem poder filtra-los.
 
 
 ## Notificações
 
-O sistema de notificações deste template utiliza a biblioteca js [PNotify](https://sciactive.com/pnotify/) juntamente com a função nativa do CI [SESSION Flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
+O sistema de notificações deste template utiliza a biblioteca javascript [PNotify](https://sciactive.com/pnotify/) juntamente com a função nativa do Codeigniter [SESSION Flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
 
-O arquivo `application/views/components/alerts` contém a ligação entre o `PHP` e o `Javascript`:
+O arquivo `application/views/components/alerts.php` contém a ligação entre o `PHP` e o `Javascript`:
 
 ```php
 <?php if($this->session->flashdata('success')): ?>
@@ -1333,7 +1333,7 @@ Existem cinco tipos de notificações pré-definidas: `success`, `error`, `warni
 
 * success:
 
-Deve ser utilizada para notificações positivas, ou seja, como o próprio nome diz, de sucesso.
+Deve ser utilizada para notificações de sucesso.
 
 * error:
 
