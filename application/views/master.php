@@ -12,7 +12,12 @@
         <title><?PHP $template->print_title(); ?></title>
   
         <!-- JQUERY -->
-        <script src="https://code.jquery.com/jquery-3.3.1.js "></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.js "></script> -->
+        <script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
+
         
         <!-- JQUERY UI -->
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
