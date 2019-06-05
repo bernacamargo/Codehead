@@ -97,6 +97,8 @@ $config['modulo_name'] = [
 
 #### Carregado por padrão(bootstrap e pnotify)
 
+>> Note que o Jquery não é carregado nos `assets`, pois visto que se carrega-lo ao final do documento, não será possível utiliza-lo no meio do `<body>`, então carrego o `jquery 3.4.1` no head da view `application/views/master.php`
+
 ```php
 // Bootstrap 4.3.1
 $config['bootstrap'] = [
