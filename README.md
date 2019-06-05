@@ -300,7 +300,7 @@ class Usuario extends MY_Controller {
 
 > Essa função deve ser utilizada nas views para recuperar informações passadas pelo controller.
 
-Exemplo:
+Exemplo
 
 ```php
 $usuarios = $this->template->item('usuarios'); //Armazena em $usuarios os dados adicionados anteriormente no controller
@@ -395,7 +395,7 @@ Exemplo
 
 > Essa função deve ser utilizada nas views para imprimir na tela os arquivos JS definidos nos [Assets](#assets). Deve ser chamada na view `master.php` a qual carrega a estrutura do HTML.
 
-Exemplo:
+Exemplo
 
 ```HTML
         .
@@ -422,7 +422,7 @@ Exemplo:
 ```
 > Essa função deve ser utilizada nas views para imprimir na tela os arquivos CSS definidos nos [Assets](#assets). Deve ser chamada na view `master.php` a qual carrega a estrutura do HTML.
 
-Exemplo:
+Exemplo
 
 ```HTML
 <!DOCTYPE html>
