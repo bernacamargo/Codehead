@@ -5,8 +5,8 @@
 
 É uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Nesta utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery](https://jquery.com/), [PNotify](https://sciactive.com/pnotify/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [Bibliotecas PHP](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter](https://www.codeigniter.com/).
 
-* Links úteis
-    * [Download Codeigniter 3.1.10](https://github.com/bcit-ci/CodeIgniter/archive/3.1.10.zip)
+* Links úteis referente ao Codeigniter 3.1.10
+    * [Download](https://github.com/bcit-ci/CodeIgniter/archive/3.1.10.zip)
     * [Documentação](https://www.codeigniter.com/user_guide/)
     * [Github](https://github.com/bcit-ci/CodeIgniter/tree/3.1-stable)
 
@@ -77,23 +77,25 @@ $config['default'] = ['bootstrap', 'vendors', 'pnotify', 'custom'];
 
 - Defina o caminho dos plugins a serem utilizados sempre respeitando a estrutura dos arrays e adicionando o nome deste ao default.
 
+Exemplo
+
 ```php
-$config['array_name'] = [
+$config['modulo_name'] = [
     'css'   =>  [
-        'path/to/css/file1';
-        'path/to/css/file2';
-        'path/to/css/file3';
+        'path/to/css/file1.css';
+        'path/to/css/file2.css';
+        'path/to/css/file3.css';
     ],
     'js'    =>  [
-        'path/to/js/file1';
-        'path/to/js/file2';
-        'path/to/js/file3';
+        'path/to/js/file1.js';
+        'path/to/js/file2.js';
+        'path/to/js/file3.js';
     ]
 ];
 ```
 
 
-#### Load default
+#### Pre-load
 
 ```php
 // Bootstrap 4.3.1
@@ -135,7 +137,6 @@ $config['pnotify'] = [
 
     ]
 ];
-
 
 
 
@@ -242,6 +243,7 @@ class Template {
 * print_page()
 * render()
 
+*Não explicarei todos os métodos, pois muitos deles são apenas funções auxiliares e acabam nunca sendo utilizadas na prática pelo desenvolvedor.*
 
 ### Métodos principais
 
