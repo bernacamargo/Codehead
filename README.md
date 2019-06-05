@@ -174,7 +174,7 @@ $config['custom'] = [
 
 ## Biblioteca Template
 
-Essa biblioteca tem como função principal auxiliar no fluxo `MVC` e possue métodos para carregar os [assets](#assets)(módulos), renderizar views, definir o `title` da página e carregar informações do `Controller => View`.
+Essa classe tem como função principal auxiliar no fluxo `MVC` e possue métodos para carregar os [assets](#assets)(módulos), renderizar views, definir o `title` da página e carregar informações do `Controller => View`.
 
 
 ```php
