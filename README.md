@@ -75,9 +75,7 @@ Configure a source de todos os import `.js` e `.css` em `application/config/asse
 $config['default'] = ['bootstrap', 'vendors', 'pnotify', 'custom'];
 ```
 
-- Defina o caminho dos plugins a serem utilizados sempre respeitando a estrutura dos arrays e adicionando o nome deste ao default.
-
-Exemplo
+- Defina o caminho dos plugins a serem utilizados sempre respeitando a estrutura dos arrays(como no exemplo a seguir) e adicionando o nome deste ao `$config['default']`(como mostrado a cima).
 
 ```php
 $config['modulo_name'] = [
