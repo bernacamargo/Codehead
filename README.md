@@ -784,6 +784,8 @@ echo $nome;
     }
 ```
 
+> Percebem que nessa função é utilizado o método `validate()` do model de Usuarios. Essa função é responsável por fazer a busca através do email e da senha informados como parâmetros e retornar as tuplas referente ao usuário buscado ou false caso não encontre.
+
 Exemplo
 
 ```php
