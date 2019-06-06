@@ -20,7 +20,8 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
     * [Métodos principais](#métodos-principais)
 * [Biblioteca Guard](#biblioteca-guard)
     * [Métodos](#métodos-1)
-* [MY_Model](#classe-my_model)
+* [MY_Controller](#my_controller)
+* [MY_Model](#my_model)
     * [Métodos](#métodos-2)
 * [Notificação(PNotify)](#notificações)
 * [Plugins JS](#plugins-js)
@@ -771,7 +772,9 @@ $this->guard->logout();
 ## MY_Controller
 Localizado em `application/core/MY_Controller.php`
 
-Essa classe acaba sendo mais simples, pois cada `controller` é muito específico. Contudo é nele que carregamos as bibliotecas [Template](#biblioteca-template) e [Guard](#biblioteca-guard)
+Essa classe acaba sendo mais simples, pois cada `controller` é muito específico. Contudo é no método construtor que carregamos as bibliotecas [Template](#biblioteca-template) e [Guard](#biblioteca-guard).
+
+> **Todos** os controllers devem herdar o `MY_Controller` através da palavra chave `extends` do PHP.
 
 ```php
 class MY_Controller extends CI_Controller {
