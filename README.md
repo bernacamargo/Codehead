@@ -499,6 +499,9 @@ Exemplo
 > Essa função deve ser utilizada nas views para imprimir uma página existente em `application/views/pages/`
 
 - render()
+
+Deve ser utilizado como um substituto do `$this->load->view()` do codeigniter para carregar páginas completas, dê uma olhada na [view master](https://github.com/bernacamargo/codehead/blob/master/application/views/master.php) para entender melhor o fluxo de carregamento.
+
 ```php
     /**
      * render
@@ -521,7 +524,7 @@ Exemplo
         $this->ci->load->view( $layout, [ 'template' => $this ] );
     }
 ```
-> Essa função deve ser utilizada nos controllers para exibir uma página existente em `application/views/pages/` com seus respectivos módulos de css/js.
+> Essa função deve ser utilizada nos controllers para exibir uma página existente em `application/views/pages/` dentro do layout `application/views/master.php` com seus respectivos módulos de css/js.
 
 Exemplo
 
