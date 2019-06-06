@@ -285,7 +285,7 @@ class Usuario extends MY_Controller {
         $this->load->model('Usuarios_model');
     }
 
-    public function index(){
+    public function índice(){
         $usuarios = $this->Usuarios_model->getAll(); // busca todos os usuarios no bd
         $this->template->set("usuarios", $usuarios); // seta os usuarios ($usuarios) encontrados para a posição 'usuarios' do array do template
     }
@@ -347,7 +347,7 @@ class Home extends MY_Controller {
         parent::__construct();
     }
 
-    public function index(){
+    public function índice(){
         $this->template->set_title("Página inicial"); // Seta o titulo da pagina
     }
 }
@@ -536,7 +536,7 @@ class Home extends MY_Controller {
         parent::__construct();
     }
 
-    public function index(){
+    public function índice(){
         $this->template->set_title("Página inicial"); // Seta o titulo da pagina
         $this->template->render('master', 'home'); // Carrega a view /views/pages/home.php dentro do layout views/master.php
     }
@@ -1208,7 +1208,7 @@ Existem duas formas de se exibir uma notificação para o usuário
 
 * PHP
 
-No controller, antes do `redirect()`, deve-se criar uma session flashdata com o index definido como sendo um dos cinco tipos citados abaixo.
+No controller, antes do `redirect()`, deve-se criar uma session flashdata com o índice definido como sendo um dos cinco tipos citados abaixo.
 
 ```php
 $this->session->set_flashdata('success', 'Muito bom, sua ação foi concluída com sucesso!');
