@@ -924,9 +924,10 @@ else{
     }
 ```
 > O campo `id` do array é **obrigatório**
+
 Exemplo
 
- ```php
+```php
 $this->load->model('Usuarios_model');
 
 $dados = [
