@@ -5,10 +5,10 @@
 
 Codehead é uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery 3.4.1](https://jquery.com/), [Font-awesome 5.8.1](http://fontawesome.io/icons), [PNotify](https://sciactive.com/pnotify/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [Bibliotecas PHP](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter](https://www.codeigniter.com/).
 
-* Links úteis referente ao Codeigniter 3.1.10
-    * [Download](https://github.com/bcit-ci/CodeIgniter/archive/3.1.10.zip)
-    * [Documentação](https://www.codeigniter.com/user_guide/)
-    * [Github](https://github.com/bcit-ci/CodeIgniter/tree/3.1-stable)
+* Links úteis
+    * [Codeigniter user guide](https://www.codeigniter.com/user_guide/)(docs)
+    * [Awesome codeigniter](https://github.com/villasboas/awesome-codeigniter)(A list of awesome CodeIgniter core, helpers, hooks, language, libraries, third_party and other cool resources for CodeIgniter.)
+    * [Codeigniter Ion Auth 3](https://github.com/benedmunds/CodeIgniter-Ion-Auth)
 
 
 ## Sumário
