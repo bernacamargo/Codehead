@@ -621,7 +621,7 @@ Exemplo
   ```php
 $nome = $this->guard->item('nome');
 echo $nome;
-// Bernardo Pinheiro Camargo
+// Fulano da Silva
 ```
 
 - login()
@@ -660,7 +660,7 @@ echo $nome;
 Exemplo
 
 ```php
-$email = 'bernardopcamargo@gmail.com';
+$email = 'fulano@example.com';
 $senha = '123456';
 
 if($this->guard->login($email, $senha)){
@@ -707,13 +707,13 @@ else{
 Exemplo
 
 ```php
-echo $this->guard->item('nome'); // Bernardo Pinheiro Camargo
+echo $this->guard->item('nome'); // Fulano da Silva
 
 $dados = ['id' => $id_usuario, 'nome' => 'Bernardo'];  //Seta os dados para o update
 
 $this->Usuarios_model->update($dados); // Atualiza o nome do usuario com id = $id_usuario
 
-echo $this->guard->item('nome'); // Bernardo Pinheiro Camargo
+echo $this->guard->item('nome'); // Fulano da Silva
 
 $this->guard->update(); // Atualiza a sessão com os valores do banco
 
@@ -744,7 +744,7 @@ echo $this->guard->item('nome'); // Bernardo
 Exemplo
 
 ```php
-echo $this->guard->item('nome'); // Bernardo Pinheiro Camargo
+echo $this->guard->item('nome'); // Fulano da Silva
 
 echo $this->guard->getShortName(); // Bernardo Camargo
 ```
@@ -884,8 +884,8 @@ Exemplo
 $this->load->model('Usuarios_model');
 
 $dados = [
-    'nome'          => 'Bernardo Pinheiro Camargo',
-    'email'         => 'bernardopcamargo@gmail.com',
+    'nome'          => 'Fulano da Silva',
+    'email'         => 'fulano@example.com',
     'senha'         => '123456',
     'sexo'          => 'masculino',
     'data_nasc'     => '1996-04-03'
@@ -932,8 +932,8 @@ $this->load->model('Usuarios_model');
 
 $dados = [
     'id'            => 1,
-    'nome'          => 'Bernardo Pinheiro Camargo',
-    'email'         => 'bernardopcamargo@gmail.com',
+    'nome'          => 'Fulano da Silva',
+    'email'         => 'fulano@example.com',
     'senha'         => '123456',
     'sexo'          => 'masculino',
     'data_nasc'     => '1996-04-03'
@@ -1009,7 +1009,7 @@ $this->load->model('Usuarios_model');
 $user = $this->Usuarios_model->getById(1);
 
 if($user){
-    echo $user['nome']; //Bernardo Pinheiro Camargo
+    echo $user['nome']; //Fulano da Silva
 }
 else{
     echo 'Usuário não encontrado';
