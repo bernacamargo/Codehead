@@ -7,7 +7,7 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
 
 * Links úteis
     * [Codeigniter user guide](https://www.codeigniter.com/user_guide/)(docs)
-    * [Awesome codeigniter](https://github.com/villasboas/awesome-codeigniter)(A list of awesome CodeIgniter core, helpers, hooks, language, libraries, third_party and other cool resources for CodeIgniter.)
+    * [Awesome codeigniter](https://github.com/codeigniter-id/awesome-codeigniter)(A list of awesome CodeIgniter core, helpers, hooks, language, libraries, third_party and other cool resources for CodeIgniter.)
     * [Codeigniter Ion Auth 3](https://github.com/benedmunds/CodeIgniter-Ion-Auth)
 
 
