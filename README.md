@@ -285,7 +285,7 @@ class Usuario extends MY_Controller {
         $this->load->model('Usuarios_model');
     }
 
-    public function índice(){
+    public function index(){
         $usuarios = $this->Usuarios_model->getAll(); // busca todos os usuarios no bd
         $this->template->set("usuarios", $usuarios); // seta os usuarios ($usuarios) encontrados para a posição 'usuarios' do array do template
     }
@@ -347,7 +347,7 @@ class Home extends MY_Controller {
         parent::__construct();
     }
 
-    public function índice(){
+    public function index(){
         $this->template->set_title("Página inicial"); // Seta o titulo da pagina
     }
 }
@@ -536,7 +536,7 @@ class Home extends MY_Controller {
         parent::__construct();
     }
 
-    public function índice(){
+    public function index(){
         $this->template->set_title("Página inicial"); // Seta o titulo da pagina
         $this->template->render('master', 'home'); // Carrega a view /views/pages/home.php dentro do layout views/master.php
     }
