@@ -923,6 +923,7 @@ else{
         return $this->db->update($this->table, $dados); 
     }
 ```
+> O campo `id` do array é **obrigatório**
 Exemplo
 
  ```php
@@ -946,7 +947,7 @@ else{
 
 ```
 
-> O campo `id` do array é **obrigatório**.
+> Perceba que não importa o nome da sua chave primária, o array com dados para update deve sempre conter um campo chamado `id`!
 
 - delete()
  ```php
