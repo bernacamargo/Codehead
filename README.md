@@ -1,4 +1,4 @@
-# Codehead - Biblioteca para Codeigniter
+# Codehead - Template para Codeigniter
 [![Latest Stable Version](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/v/stable)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 [![Licença](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 
