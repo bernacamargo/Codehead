@@ -269,7 +269,13 @@ class Template {
      * @return void
      */
     public function print_js() {
-        foreach( $this->js as $js ) echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
+        foreach( $this->js as $js ) {
+            if(ENVIRONMENT == 'production')
+                echo '<script src="'.$js.'" type="text/javascript"></script>';
+            else{
+                echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
+            }
+        }
     }
 
     /**
@@ -280,7 +286,15 @@ class Template {
      * @return void
      */
     public function print_css() {
-        foreach( $this->css as $css ) echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';
+        foreach( $this->css as $css ) {
+            if(ENVIRONMENT == 'production'){
+                echo '<link href="'.$css.'" rel="stylesheet" media="screen"></script>';
+            }
+            else{
+                echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';   
+            }
+            
+        }
     }
 
     /**
