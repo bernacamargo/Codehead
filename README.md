@@ -412,8 +412,6 @@ Exemplo
 
 > Essa função deve ser utilizada nas views para imprimir na tela os arquivos JS definidos nos [Assets](#assets). Deve ser chamada na view `master.php` a qual carrega a estrutura do HTML.
 
-**Note que nas funções `print_css` e `print_js` possuem uma verificação de `ENVIRONMENT` a qual define o estágio que está o projeto, possuindo os valores: `production`, `testing` e `development`. Quando não estivermos em ambiente de produção, a URL do arquivo recebe um sufixo `?version='.time().'`, para que o navegador seja sempre forçado a baixar o arquivo novamente.**
-
 Exemplo
 
 ```HTML
@@ -473,6 +471,9 @@ Exemplo
     .
 
 ```
+
+> **Note que nas funções `print_css` e `print_js` possuem uma verificação de `ENVIRONMENT` a qual define o estágio que está o projeto, possuindo os valores: `production`, `testing` e `development`. Quando não estivermos em ambiente de produção, a URL do arquivo recebe um sufixo `?version='.time().'`, para que o navegador seja sempre forçado a baixar o arquivo novamente.**
+
 
 - print_component()
 ```php
