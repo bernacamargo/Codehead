@@ -15,14 +15,14 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
 ## Sumário
 * [Instalando](#instalando)
 * [Configurando](#configurando)
-* [Biblioteca Assets](#assets)
+* [Config Assets](#config-assets)
 * [Biblioteca Template](#biblioteca-template)
     * [Métodos](#métodos)
     * [Métodos principais](#métodos-principais)
 * [Biblioteca Guard](#biblioteca-guard)
     * [Métodos](#métodos-1)
-* [MY_Controller](#my_controller)
-* [MY_Model](#my_model)
+* [Core MY_Controller](#core-my_controller)
+* [Core MY_Model](#coremy_model)
     * [Métodos](#métodos-2)
 * [Notificação(PNotify)](#notificações)
 * [Plugins JS](#plugins-js)
@@ -71,7 +71,7 @@ $db['default'] = array(
 );
 ```
 
-## Assets
+## Config Assets
 
 Configure a source de todos os import `.js` e `.css` em `application/config/assets.php`
 
@@ -770,7 +770,7 @@ Exemplo
 $this->guard->logout();
 ```
 
-## MY_Controller
+## Core MY_Controller
 Localizado em `application/core/MY_Controller.php`
 
 Essa classe acaba sendo mais simples, pois cada `controller` é muito específico. Contudo é no método construtor que carregamos as bibliotecas [Template](#biblioteca-template) e [Guard](#biblioteca-guard).
@@ -791,7 +791,7 @@ class MY_Controller extends CI_Controller {
 }
 ```
 
-## MY_Model
+## Core MY_Model
 Localizado em `application/core/MY_Model.php`
 
 Essa classe é responsável por permitir a reutilização de funções que são comuns em aplicações web que utilizam SQL para manipular um banco de dados.
