@@ -400,11 +400,19 @@ Exemplo
      * @return void
      */
     public function print_js() {
-        foreach( $this->js as $js ) echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
+        foreach( $this->js as $js ) {
+            if(ENVIRONMENT == 'production')
+                echo '<script src="'.$js.'" type="text/javascript"></script>';
+            else{
+                echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
+            }
+        }
     }
 ```
 
 > Essa função deve ser utilizada nas views para imprimir na tela os arquivos JS definidos nos [Assets](#assets). Deve ser chamada na view `master.php` a qual carrega a estrutura do HTML.
+
+**Note que nas funções `print_css` e `print_js` possuem uma verificação de `ENVIRONMENT` a qual define o estágio que está o projeto, possuindo os valores: `production`, `testing` e `development`. Quando não estivermos em ambiente de produção, a URL do arquivo recebe um sufixo `?version='.time().'`, para que o navegador seja sempre forçado a baixar o arquivo novamente.**
 
 Exemplo
 
@@ -428,7 +436,15 @@ Exemplo
      * @return void
      */
     public function print_css() {
-        foreach( $this->css as $css ) echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';
+        foreach( $this->css as $css ) {
+            if(ENVIRONMENT == 'production'){
+                echo '<link href="'.$css.'" rel="stylesheet" media="screen"></script>';
+            }
+            else{
+                echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';   
+            }
+            
+        }
     }
 ```
 > Essa função deve ser utilizada nas views para imprimir na tela os arquivos CSS definidos nos [Assets](#assets). Deve ser chamada na view `master.php` a qual carrega a estrutura do HTML.
