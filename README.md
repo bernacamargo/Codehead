@@ -22,7 +22,7 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
 * [Biblioteca Guard](#biblioteca-guard)
     * [Métodos](#métodos-1)
 * [Core MY_Controller](#core-my_controller)
-* [Core MY_Model](#coremy_model)
+* [Core MY_Model](#core-my_model)
     * [Métodos](#métodos-2)
 * [Notificação(PNotify)](#notificações)
 * [Plugins JS](#plugins-js)
