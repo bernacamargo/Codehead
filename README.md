@@ -181,6 +181,8 @@ $config['custom'] = [
 ];
 ```
 
+> Essa `$config` é carregada no método construtuor do [Template](#biblioteca-template)
+
 ## Biblioteca Template
 
 Essa classe tem como função principal auxiliar no fluxo `MVC` e possue métodos para carregar os [assets](#assets)(módulos), renderizar views, definir o `title` da página e carregar informações do `Controller => View`.
