@@ -36,7 +36,12 @@ class Guard {
      * @param String $nome [Nome completo do usuario]
      * @return String [Concatena o primeiro e o ultimo nome do usuario]
      */
-    public function getShortName($nome = $this->user['nome']){
+    public function getShortName($nome = false){
+
+        if (!$nome) {
+            $nome = $this->user['nome'];
+        }
+
         $nomes = explode(" ", $nome);
 
         if(count($nomes) > 1)
