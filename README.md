@@ -750,7 +750,10 @@ echo $this->guard->item('nome'); // Bernardo
      * @param String $nome [Nome completo do usuario]
      * @return String [Concatena o primeiro e o ultimo nome do usuario]
      */
-    public function getShortName($nome = $this->user['nome']){
+    public function getShortName($nome = false){
+        if(!$nome)
+            $nome = $this->user['nome'];
+
         $nomes = explode(" ", $nome);
 
         if(count($nomes) > 1)
@@ -767,7 +770,10 @@ Exemplo
 ```php
 echo $this->guard->item('nome'); // Fulano da Silva
 
-echo $this->guard->getShortName(); // Bernardo Camargo
+echo $this->guard->getShortName(); // Fulano Silva
+
+echo $this->guard->getShortName('Fulano de Oliveira da Silva'); // Fulano Silva
+
 ```
 
 * logout()
