@@ -1367,6 +1367,7 @@ Localizados em `assets/vendors/`
 - [switchery](https://abpetkov.github.io/switchery/)
 - [transitionize](https://github.com/abpetkov/transitionize)
 - [validator](https://validatejs.org/)
+- [maskMoney](https://github.com/plentz/jquery-maskmoney)
 
 
 ## Contribuição
