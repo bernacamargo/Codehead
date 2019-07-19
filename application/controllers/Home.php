@@ -34,7 +34,7 @@ class Home extends MY_Controller {
 		// Verifica se o usuario ta logado
 		if($this->guard->logged()){
 			// Redireciona para o dashboard
-			$this->template->set_title('Dashboard');
+			$this->template->set_title('CodeHead');
 			$this->template->render('master', 'home' );
 		}
 		else{
