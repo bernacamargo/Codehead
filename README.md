@@ -4,7 +4,7 @@
 
 <!-- [![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10) -->
 
-Codehead é uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery 3.4.1](https://jquery.com/), [Font-awesome 5.8.1](http://fontawesome.io/icons), [PNotify](https://sciactive.com/pnotify/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [Bibliotecas PHP](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter](https://www.codeigniter.com/).
+Codehead é uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery 3.4.1](https://jquery.com/), [Font-awesome 5.8.1](http://fontawesome.io/icons), [Toastr](https://codeseven.github.io/toastr/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [Bibliotecas PHP](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter](https://www.codeigniter.com/).
 
 * Links úteis
     * [Codeigniter user guide](https://www.codeigniter.com/user_guide/)(docs)
@@ -25,7 +25,7 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
 * [Core MY_Controller](#core-my_controller)
 * [Core MY_Model](#core-my_model)
     * [Métodos](#métodos-2)
-* [Notificação(PNotify)](#notificações)
+* [Notificações](#notificações)
 * [Plugins JS](#plugins-js)
 * [Licença MIT](#license)
 
@@ -79,7 +79,7 @@ Configure a source de todos os import `.js` e `.css` em `application/config/asse
 - No array `$config['default']` configure a ordem, da esquerda para a direita, em que os assets serão carregados. Note que os arquivos `functions.js` e `style.css` devem ser carregados por último. É válido freezar que os assets apenas serão carregados caso sejam definidos nesse array.
 
 ```php
-$config['default'] = ['bootstrap', 'vendors', 'pnotify', 'custom'];
+$config['default'] = ['bootstrap', 'vendors', 'toastr', 'custom'];
 ```
 
 > O indice `custom` deve estar **sempre** na última posição do vetor.
@@ -102,7 +102,7 @@ $config['modulo_name'] = [
 ```
 
 
-#### Carregado por padrão(bootstrap e pnotify)
+#### Carregado por padrão(bootstrap e toastr)
 
 > Note que o Jquery não é carregado nos `assets`, pois visto que se carrega-lo ao final do documento, não será possível utiliza-lo no meio do `<body>`, então carrego o `jquery 3.4.1` no head da view `application/views/master.php`
 
@@ -119,43 +119,22 @@ $config['bootstrap'] = [
         site_url('assets/vendors/bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js')
     ]
 ];
-
-// Notificação carregada por default
-$config['pnotify'] = [
+// Toastr notification
+$config['toastr'] = [
     'css'   =>  [
-        site_url('assets/vendors/pnotify/dist/pnotify.css'), 
-        site_url('assets/vendors/pnotify/dist/pnotify.buttons.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.nonblock.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.material.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.mobile.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.brighttheme.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.history.css'),         
-
+        site_url('assets/vendors/toastr/toastr.min.css')
     ],
-    'js'    => [
-        site_url('assets/vendors/pnotify/dist/pnotify.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.buttons.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.nonblock.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.animate.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.callbacks.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.confirm.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.history.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.mobile.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.reference.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.tooltip.js'),         
-
+    'js'    =>  [
+        site_url('assets/vendors/toastr/toastr.min.js')
     ]
 ];
 
 
-
 /**
- * ================================
- * ALTERAR SOMENTE OS ARRAYS ABAIXO
- * ================================
+ * ====================================
+ * ADICIONAR OS PLUGINS NO ARRAY ABAIXO
+ * ====================================
  */
-
-
 
 // Plugins localizados na pasta assets/vendors
 $config['vendors'] = [
@@ -167,8 +146,6 @@ $config['vendors'] = [
 
     ]
 ];
-
-
 
 // Ultimo módule a ser carregado
 $config['custom'] = [
@@ -1181,7 +1158,7 @@ else{
 
 ## Notificações
 
-O sistema de notificações deste template utiliza a biblioteca javascript [PNotify](https://sciactive.com/pnotify/) juntamente com a função nativa do Codeigniter [SESSION Flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
+O sistema de notificações deste template utiliza a biblioteca javascript [Toastr](https://codeseven.github.io/toastr/) juntamente com a função nativa do Codeigniter [SESSION Flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
 
 O arquivo `application/views/components/alerts.php` contém a ligação entre o `PHP` e o `Javascript`:
 
@@ -1300,10 +1277,10 @@ $.ajax({
 
 * Remover as notificações ativas
 
-Para fazer com que as notificações desapareçam basta usar a função do PNotify:
+Para fazer com que as notificações desapareçam basta usar a função do Toastr:
 
 ```javascript
-PNotify.removeAll();
+toastr.clear();
 ```
 
 
@@ -1365,6 +1342,7 @@ Localizados em `assets/vendors/`
 - [skycons](https://darkskyapp.github.io/skycons/)
 - [starrr](http://dobtco.github.io/starrr/)
 - [switchery](https://abpetkov.github.io/switchery/)
+- [toastr notification](https://codeseven.github.io/toastr/)
 - [transitionize](https://github.com/abpetkov/transitionize)
 - [validator](https://validatejs.org/)
 - [maskMoney](https://github.com/plentz/jquery-maskmoney)
