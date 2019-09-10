@@ -9,7 +9,7 @@
  */
 
 // ORDER DE CARREGAMENTO DOS MODULOS
-$config['default'] = ['bootstrap', 'vendors', 'pnotify', 'custom'];
+$config['default'] = ['bootstrap', 'vendors', 'toastr', 'custom'];
 
 
 /**
@@ -31,6 +31,15 @@ $config['bootstrap'] = [
     ]
 ];
 
+
+$config['toastr'] = [
+    'css'   =>  [
+        site_url('assets/vendors/toastr/toastr.min.css')
+    ],
+    'js'    =>  [
+        site_url('assets/vendors/toastr/toastr.min.js')
+    ]
+];
 
 // Notificação carregada por default
 $config['pnotify'] = [
