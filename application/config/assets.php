@@ -30,8 +30,7 @@ $config['bootstrap'] = [
         site_url('assets/vendors/bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js')
     ]
 ];
-
-
+// Toastr notification
 $config['toastr'] = [
     'css'   =>  [
         site_url('assets/vendors/toastr/toastr.min.css')
@@ -41,40 +40,15 @@ $config['toastr'] = [
     ]
 ];
 
-// Notificação carregada por default
-$config['pnotify'] = [
-    'css'   =>  [
-        site_url('assets/vendors/pnotify/dist/pnotify.css'), 
-        site_url('assets/vendors/pnotify/dist/pnotify.buttons.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.nonblock.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.material.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.mobile.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.brighttheme.css'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.history.css'),         
 
-    ],
-    'js'    => [
-        site_url('assets/vendors/pnotify/dist/pnotify.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.buttons.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.nonblock.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.animate.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.callbacks.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.confirm.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.history.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.mobile.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.reference.js'),         
-        site_url('assets/vendors/pnotify/dist/pnotify.tooltip.js'),         
-
-    ]
-];
 
 
 
 
 /**
- * ================================
- * ALTERAR SOMENTE OS ARRAYS ABAIXO
- * ================================
+ * ====================================
+ * ADICIONAR OS PLUGINS NO ARRAY ABAIXO
+ * ====================================
  */
 
 
