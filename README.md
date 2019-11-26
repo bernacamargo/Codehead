@@ -1160,7 +1160,96 @@ else{
 
 O sistema de notificações deste template utiliza a biblioteca javascript [Toastr](https://codeseven.github.io/toastr/) juntamente com a função nativa do Codeigniter [SESSION Flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
 
+Utilizaremos a função `notifyUser()` para exibir as notificações através do javascript.
+
+```javascript
+/**
+* notifyUser
+* 
+* notifica o usuario
+*
+* @param String type [Tipo de notificação]
+* @param String text [Conteúdo da notificação]
+* @param Int delay [Tempo para a notificação sumir]
+*/
+function notifyUser(type, text, delay = 8000) {
+    var icon = "";
+    var title = "";
+
+    // Toastr config
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": true,
+        "onclick": null,
+        "showDuration": 300,
+        "hideDuration": 1000,
+        "timeOut": delay,
+        "extendedTimeOut": 1000,
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+
+    switch(type){
+      case 'success':
+        toastr.success(text);
+      break;
+
+      case 'error':
+        toastr.error(text);
+      break;
+
+      case 'warning':
+        toastr.warning(text);
+      break;
+
+      case 'info':
+        toastr.info(text);      
+      break;
+
+      case 'loading':
+        icon = "<i class='fa fa-spin fa-spinner'></i>&ensp;";
+        
+        toastr.options.timeOut = 0;
+        toastr.options.extendedTimeOut = 0;
+
+        toastr.info("<i class='fa fa-spin fa-spinner'></i>&ensp;" + text);
+        
+      break;
+
+      default:
+        toastr.error('Houve um erro ao exibir a notificação');
+      break;
+    }
+
+};
+```
+
+Para trazermos notificações de um Controller para uma View após realizarmos um `redirect` utilizaremos o conceito de SESSION FLASHDATA, o qual permite armazenar informações válidas somente na próxima requisição e após isso serão apagadas automaticamente.
+
+Exemplo de como criar uma notificação no Controller.
+
+```php
+public function login(){
+    $post = $this->input->post();
+
+    if($this->guard->login($post['email'], $post['senha'])){
+        $this->session->set_flashdata('success', 'Bem vindo!');
+    }
+    else
+        $this->session->set_flashdata('error', 'Credenciais inválidas.');
+
+    redirect(site_url(),'location');
+}
+```
+
 O arquivo `application/views/components/alerts.php` contém a ligação entre o `PHP` e o `Javascript`:
+
 
 ```php
 <?php if($this->session->flashdata('success')): ?>

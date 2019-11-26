@@ -1,8 +1,17 @@
 'use strict';
 
+/**
+* notifyUser
+* 
+* notifica o usuario
+*
+* @param String type [Tipo de notificação]
+* @param String text [Conteúdo da notificação]
+* @param Int delay [Tempo para a notificação sumir]
+*/
 function notifyUser(type, text, delay = 8000) {
-	var icon = "error";
-	var title = "error";
+	var icon = "";
+	var title = "";
 
 	// Toastr config
 	toastr.options = {
@@ -15,7 +24,7 @@ function notifyUser(type, text, delay = 8000) {
 		"onclick": null,
 		"showDuration": 300,
 		"hideDuration": 1000,
-		"timeOut": 5000,
+		"timeOut": delay,
 		"extendedTimeOut": 1000,
 		"showEasing": "swing",
 		"hideEasing": "linear",
@@ -25,65 +34,34 @@ function notifyUser(type, text, delay = 8000) {
 
 	switch(type){
 	  case 'success':
-		icon = "<i class='fa fa-check'></i>&ensp;";
-		title = "Sucesso!";
-
 		toastr.success(text);
 	  break;
 
 	  case 'error':
-		icon = "<i class='fa fa-times-circle'></i>&ensp;";
-		title = "Erro";
-
 		toastr.error(text);
 	  break;
 
 	  case 'warning':
-		icon = "<i class='fa fa-exclamation-triangle'></i>&ensp;";
-		title = "Atenção!";
-
 		toastr.warning(text);
-		
 	  break;
 
 	  case 'info':
-		icon = "<i class='fa fa-info-circle'></i>&ensp;";
-		title = "Atenção!";
-
 		toastr.info(text);		
-
 	  break;
 
 	  case 'loading':
-
 		icon = "<i class='fa fa-spin fa-spinner'></i>&ensp;";
-		type = 'info';
-		title = "Loading...";
-
+		
 		toastr.options.timeOut = 0;
 		toastr.options.extendedTimeOut = 0;
 
-		toastr.info(text);
+		toastr.info("<i class='fa fa-spin fa-spinner'></i>&ensp;" + text);
 		
+	  break;
+
+	  default:
+	  	toastr.error('Houve um erro ao exibir a notificação');
 	  break;
 	}
 
-	// new PNotify({
-	//   text: text,
-	//   title: icon + title,
-	//   icon: false,
-	//   styling: 'brighttheme',
-	//   type: type,
-	//   delay: delay,
-	//   buttons: {
-	// 	closer: true,
-	// 	closerHover: true
-	//   },
-	//   animate: {
-	// 	  animate: true,
-	// 	  in_class: 'bounceIn',
-	// 	  out_class: 'bounceOut'
-	//   }       
-	  
-	// });
 };
