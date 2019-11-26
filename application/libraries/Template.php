@@ -288,10 +288,10 @@ class Template {
     public function print_css() {
         foreach( $this->css as $css ) {
             if(ENVIRONMENT == 'production'){
-                echo '<link href="'.$css.'" rel="stylesheet" media="screen"></script>';
+                echo '<link href="'.$css.'" rel="stylesheet" media="screen"/>';
             }
             else{
-                echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"></script>';   
+                echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"/>';   
             }
             
         }
