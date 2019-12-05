@@ -45,7 +45,7 @@ class Login extends MY_Controller {
 
 		$post = $this->input->post();
 
-		if($this->Usuarios_model->login($post['email'], $post['senha'])){
+		if($this->guard->login($post['email'], $post['senha'])){
 			$this->session->set_flashdata('success', 'Bem vindo!');
 		}
 		else

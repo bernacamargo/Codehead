@@ -29,18 +29,15 @@ class Usuarios_model extends MY_Model {
     /**
      * validade
      *
-     * Busca o usuario no banco utilizando o email e senha passado
-     * Criptografia md5 em cima de um sha1 para segurança
+     * Busca o email do usuario no banco utilizando o email passado como parametro
      * 
      * @param  String $email
-     * @param  String $senha s/ criptografia
      * @return Array or false [Retorna um array com os dados do usuario ou false caso não encontre]
      */
-    function validate($email, $senha) {
+    function validate($email) {
         $this->db->from($this->table.' u')
         ->select('u.*')
         ->where('u.email', $email)
-        ->where('u.senha', md5(sha1($senha)))
         ->where('u.acesso !=', 0)
         ->limit(1);
 

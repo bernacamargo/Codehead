@@ -92,16 +92,22 @@ class Guard {
         $this->ci->load->model( 'Usuarios_model' );
 
         // faz o login
-        if ( $user = $this->ci->Usuarios_model->validate( $email, $senha ) ) {
+        if ( $user = $this->ci->Usuarios_model->validate( $email ) ) {
             
-            // guarda na sessao
-            $this->ci->session->set_userdata( 'user', $user );            
-            
-            // guarda no atributo
-            $this->user = $user;
-
-            return true;
-        } else return false;
+            // Valida a senha do usuário
+            // Para cadastrar a senha no banco utilize a função password_hash() do PHP
+            if(password_verify($senha, $user['senha'])){        
+                // guarda na sessao
+                $this->ci->session->set_userdata( 'user', $user );            
+                
+                // guarda no atributo
+                $this->user = $user;
+                
+                return true;
+            }
+        }
+        
+        return false;
     }
 
     /**
