@@ -289,7 +289,7 @@ class Usuario extends MY_Controller {
     }
 ```
 
-> Essa função deve ser utilizada nas views para recuperar informações passadas pelo controller.
+> Essa função deve ser utilizada nas views para recuperar informações enviadas pelo controller.
 
 Exemplo
 
@@ -380,11 +380,13 @@ Exemplo
      * @return void
      */
     public function print_js() {
-        foreach( $this->js as $js ) {
-            if(ENVIRONMENT == 'production')
+        if(count($this->js) > 0){
+            foreach( $this->js as $js ) {
+                if(ENVIRONMENT == 'production')
                 echo '<script src="'.$js.'" type="text/javascript"></script>';
-            else{
-                echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
+                else{
+                    echo '<script src="'.$js.'?version='.time().'" type="text/javascript"></script>';
+                }
             }
         }
     }
@@ -394,7 +396,7 @@ Exemplo
 
 Exemplo
 
-```HTML
+```php
         .
         .
         .
@@ -414,14 +416,16 @@ Exemplo
      * @return void
      */
     public function print_css() {
-        foreach( $this->css as $css ) {
-            if(ENVIRONMENT == 'production'){
-                echo '<link href="'.$css.'" rel="stylesheet" media="screen"/>';
+        if(count($this->css) > 0){
+            foreach( $this->css as $css ) {
+                if(ENVIRONMENT == 'production'){
+                    echo '<link href="'.$css.'" rel="stylesheet" media="screen"/>';
+                }
+                else{
+                    echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"/>';   
+                }
+                
             }
-            else{
-                echo '<link href="'.$css.'?version='.time().'" rel="stylesheet" media="screen"/>';   
-            }
-            
         }
     }
 ```
@@ -640,20 +644,27 @@ echo $nome;
         $this->ci->load->model( 'Usuarios_model' );
 
         // faz o login
-        if ( $user = $this->ci->Usuarios_model->validate( $email, $senha ) ) {
+        if ( $user = $this->ci->Usuarios_model->validate( $email ) ) {
             
-            // guarda na sessao
-            $this->ci->session->set_userdata( 'user', $user );            
-            
-            // guarda no atributo
-            $this->user = $user;
-
-            return true;
-        } else return false;
+            // Valida a senha do usuário
+            // Para cadastrar a senha no banco utilize a função password_hash() do PHP
+            if(password_verify($senha, $user['senha'])){        
+                // guarda na sessao
+                $this->ci->session->set_userdata( 'user', $user );            
+                
+                // guarda no atributo
+                $this->user = $user;
+                
+                return true;
+            }
+        }
+        
+        return false;
     }
 ```
 
 > Percebam que nessa função é utilizado o método `validate()` do model de Usuarios. Essa função é responsável por fazer a busca através do email e da senha informados como parâmetros e retornar as tuplas referente ao usuário buscado ou false caso não encontre.
+> Outro ponto importante é que deve ser utilizado hash para criptografar as senhas, sendo necessário o uso da função [password_hash](https://www.php.net/manual/pt_BR/function.password-hash.php) para inserir a senha no banco e [password_verify](https://www.php.net/manual/pt_BR/function.password-verify.php) para validar a senha no momento do login.
 
 Exemplo
 
