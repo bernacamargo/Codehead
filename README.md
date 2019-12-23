@@ -17,7 +17,7 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
 * [Instalando](#instalando)
 * [Configurando](#configurando)
 * [Assets](#assets)
-* [Helper](#helper)
+* [Helper functions](#helper-functions)
 * [Biblioteca Template](#biblioteca-template)
     * [Métodos](#métodos)
     * [Métodos principais](#métodos-principais)
@@ -65,9 +65,9 @@ $db['default'] = array(
 );
 ```
 
-## Helper
+## Helper functions
 
-O template conta com algumas funções pré-definidas em PHP para facilitar no seu desenvolvimento.
+O template possui algumas funções pré-definidas em PHP para facilitar no seu desenvolvimento.
 
 * debug()
 * str_slug()
@@ -75,6 +75,8 @@ O template conta com algumas funções pré-definidas em PHP para facilitar no s
 * validate_card()
 * time_ago()
 * hextorgba()
+
+### Funções
 
 - debug()
 ```PHP
