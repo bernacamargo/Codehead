@@ -17,6 +17,7 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
 * [Instalando](#instalando)
 * [Configurando](#configurando)
 * [Assets](#assets)
+* [Helper](#helper)
 * [Biblioteca Template](#biblioteca-template)
     * [Métodos](#métodos)
     * [Métodos principais](#métodos-principais)
@@ -64,9 +65,175 @@ $db['default'] = array(
 );
 ```
 
+## Helper
+
+O template conta com algumas funções pré-definidas para facilitar no seu desenvolvimento.
+
+* debug()
+* str_slug()
+* format_money()
+* validate_card()
+* time_ago()
+* hextorgba()
+
+- debug()
+```PHP
+/**
+ * debug
+ *
+ * Exibe o conteúdo detalhado e identado de uma variável no PHP
+ * 
+ * @param  Array $arry
+ * @return void
+ */
+function debug($arry) {
+	echo '<pre>' . var_export($arry, TRUE) . '</pre>';
+}
+```
+
+- str_slug()
+```PHP
+/**
+ * str_slug
+ *
+ * Normaliza uma string removendo todos os caracteres especiais, espaços e acentos.
+ * 
+ * @param  String $str
+ * @return String
+ */
+function str_slug($str) {
+    return url_title(convert_accented_characters($str), "-", true);
+}
+```
+
+- format_money()
+```PHP
+/**
+ * format_money
+ *
+ * Recebe um valor float/ e converte para a exibição padrão do Real com 2 casas decimais, separando os decimais com virgula e a casa de milhares com ponto.
+ * 
+ * @param  Mixed $money
+ * @return void
+ */
+function format_money($money) {
+    $money = floatval($money);
+    echo number_format($money, 2, ',', '.');
+}
+```
+
+- validate_card()
+```PHP
+/**
+ * validate_card
+ *
+ * Recebe um número de cartão de crédito e retorna o número do cartão, a bandeira dele e se é valido ou não.
+ * 
+ * @param  String $number
+ * @return array $return
+ */
+function validate_card($number){
+    // Remove spaces
+    $number = str_replace(" ", "", $number);
+
+    $cardtype = array(
+        'visa'              =>    "/^4\d{3}-?\d{4}-?\d{4}-?\d{4}$/",
+        'mastercard'        =>    "/^5[1-5]\d{2}-?\d{4}-?\d{4}-?\d{4}$/",
+        'discover'          =>    "/^6011-?\d{4}-?\d{4}-?\d{4}$/",
+        'amex'              =>    "/^3[4,7]\d{13}$/",
+        'diners'            =>    "/^3[0,6,8]\d{12}$/",
+        'bankcard'          =>    "/^5610-?\d{4}-?\d{4}-?\d{4}$/",
+        'jcb'               =>    "/^[3088|3096|3112|3158|3337|3528]\d{12}$/",
+        'enroute'           =>    "/^[2014|2149]\d{11}$/",
+        'switch'            =>    "/^[4903|4911|4936|5641|6333|6759|6334|6767]\d{12}$/"
+    );
+
+    $type = false;
+
+    if (preg_match($cardtype['visa'], $number)) {
+        $type = "visa";
+    } else if (preg_match($cardtype['mastercard'], $number)) {
+        $type = "mastercard";
+    } else if (preg_match($cardtype['amex'], $number)) {
+        $type = "amex";
+    } else if (preg_match($cardtype['diners'], $number)) {
+        $type = 'diners';
+    } else if (preg_match($cardtype['bankcard'], $number)) {
+        $type = 'bankcard';
+    } else if (preg_match($cardtype['jcb'], $number)) {
+        $type = 'jcb';
+    } else if (preg_match($cardtype['enroute'], $number)) {
+        $type = 'enroute';
+    } else if (preg_match($cardtype['switch'], $number)) {
+        $type = 'switch';
+    } else {
+        $type =  false;
+    }
+
+    $return['valid']    =    LuhnCheck($number);
+    $return['ccnum']    =    $number;
+    $return['type']     =    $type;
+
+    return $return;
+}
+```
+
+> Essa função utiliza o [Algoritmo de Luhn](https://www.geeksforgeeks.org/luhn-algorithm/) para fazer o checksum dos números do cartão retornando TRUE ou FALSE.
+
+- time_ago()
+```PHP
+/**
+ * time_ago
+ *
+ * Recebe um Timestamp e retorna o tempo que passou desta data até o momento atual.
+ * 
+ * @param  Integer $time
+ * @return boolean
+ */
+
+function time_ago($time){
+    $time_difference = time() - $time;
+    if ($time_difference < 1) {
+        return 'less than 1 second ago';
+    }
+    $condition = array(
+        12 * 30 * 24 * 60 * 60 =>  'year',
+        30 * 24 * 60 * 60       =>  'month',
+        24 * 60 * 60            =>  'day',
+        60 * 60                 =>  'hour',
+        60                      =>  'minute',
+        1                       =>  'second'
+    );
+    foreach ($condition as $secs => $str) {
+        $d = $time_difference / $secs;
+        if ($d >= 1) {
+            $t = round($d);
+            return 'about ' . $t . ' ' . $str . ($t > 1 ? 's' : '') . ' ago';
+        }
+    }
+}
+```
+
+- hextorgba()
+```PHP
+/**
+ * hextorgba
+ *
+ * Recebe uma string referente a um valor hexadecimal, um valor de transparencia entre 0-1 e converte para RGBA.
+ * 
+ * @param  String $hex
+ * @param  Float $transp
+ * @return boolean
+ */
+function hextorgba($hex, $transp = 1) {
+    list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+    echo 'rgba(' . $r . ',' . $g . ',' . $b . ', ' . $transp . ')';
+}
+```
+
 ## Assets
 
-Configure a source de todos os import `.js` e `.css` em `application/config/assets.php`
+Defina a source de todos os import `.js` e `.css` em `application/config/assets.php`
 
 - No array `$config['default']` configure a ordem, da esquerda para a direita, em que os assets serão carregados. Note que os arquivos `functions.js` e `style.css` devem ser carregados por último. É válido freezar que os assets apenas serão carregados caso sejam definidos nesse array.
 
