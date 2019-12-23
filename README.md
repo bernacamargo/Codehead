@@ -67,7 +67,7 @@ $db['default'] = array(
 
 ## Helper
 
-O template conta com algumas funções pré-definidas para facilitar no seu desenvolvimento.
+O template conta com algumas funções pré-definidas em PHP para facilitar no seu desenvolvimento.
 
 * debug()
 * str_slug()
