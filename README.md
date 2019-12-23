@@ -1,8 +1,8 @@
 # Codehead - Template para Codeigniter
-[![Latest Stable Version](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/v/stable)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
-[![Licença](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
+<!-- [![Latest Stable Version](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/v/stable)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
+[![Licença](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10) -->
 
-<!-- [![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10) -->
+[![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 
 Codehead é uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery 3.4.1](https://jquery.com/), [Font-awesome 5.8.1](http://fontawesome.io/icons), [Toastr](https://codeseven.github.io/toastr/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [Bibliotecas PHP](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter](https://www.codeigniter.com/).
 
