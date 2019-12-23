@@ -31,18 +31,8 @@ class Home extends MY_Controller {
 
 	public function index(){
 		header("Access-Control-Allow-Origin: *");
-
-		// Verifica se o usuario ta logado
-		if($this->guard->logged()){
-			// Redireciona para o dashboard
-			$this->template->set_title('CodeHead');
-			$this->template->render('master', 'home' );
-		}
-		else{
-			// Redireciona para o login
-			$this->template->set_title("Login");
-			$this->template->render('master','login');
-		}
+		$this->template->set_title('CodeHead');
+		$this->template->render('master', 'home' );
 	}
 
 
