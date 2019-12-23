@@ -16,7 +16,7 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
 ## Sumário
 * [Instalando](#instalando)
 * [Configurando](#configurando)
-* [Config Assets](#config-assets)
+* [Assets](#assets)
 * [Biblioteca Template](#biblioteca-template)
     * [Métodos](#métodos)
     * [Métodos principais](#métodos-principais)
@@ -30,17 +30,9 @@ Codehead é uma biblioteca com otimizações voltadas para evitar a repetição 
 * [Licença MIT](#license)
 
 ## Instalando
-Faça o [download como ZIP](https://github.com/bernacamargo/codehead/archive/master.zip) ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la para desenvolver sua aplicação.
+Faça o [download como ZIP](https://github.com/bernacamargo/codehead/archive/master.zip) ou clone o repósitorio em seu ambiente local, em seguida basta realizar a configuração da aplicação e começar a usa-la para desenvolver sua sistema web.
 
 ## Configurando
-### Config.php
-Configure o base_url em `application/config/config.php`
-
-- Troque `yourapp` pelo nome do seu aplicativo local
-
-```php
-$config['base_url'] = 'http://localhost/yourapp'
-```
 
 ### Conectando ao Banco de Dados
 
@@ -72,7 +64,7 @@ $db['default'] = array(
 );
 ```
 
-## Config Assets
+## Assets
 
 Configure a source de todos os import `.js` e `.css` em `application/config/assets.php`
 
@@ -82,6 +74,8 @@ Configure a source de todos os import `.js` e `.css` em `application/config/asse
 $config['default'] = ['bootstrap', 'vendors', 'toastr', 'custom'];
 ```
 
+> O `$config["default"]` é o array responsável por definir quais e em qual ordem os assets serão importados.
+
 > O indice `custom` deve estar **sempre** na última posição do vetor.
 
 - Defina o caminho dos plugins a serem utilizados sempre respeitando a estrutura dos arrays(como no exemplo a seguir) e adicionando o nome deste ao `$config['default']`(como mostrado a cima).
@@ -89,14 +83,16 @@ $config['default'] = ['bootstrap', 'vendors', 'toastr', 'custom'];
 ```php
 $config['modulo_name'] = [
     'css'   =>  [
-        'path/to/css/file1.css';
-        'path/to/css/file2.css';
-        'path/to/css/file3.css';
+        site_url('assets/path/to/css/file1.css'),
+        site_url('assets/path/to/css/file2.css'),
+        site_url('assets/path/to/css/file3.css'),
+        site_url('assets/path/to/css/file4.css')
     ],
     'js'    =>  [
-        'path/to/js/file1.js';
-        'path/to/js/file2.js';
-        'path/to/js/file3.js';
+        site_url('assets/path/to/js/file1.js'),
+        site_url('assets/path/to/js/file2.js'),
+        site_url('assets/path/to/js/file3.js'),
+        site_url('assets/path/to/js/file4.js')
     ]
 ];
 ```
@@ -104,7 +100,7 @@ $config['modulo_name'] = [
 
 #### Carregado por padrão(bootstrap e toastr)
 
-> Note que o Jquery não é carregado nos `assets`, pois visto que se carrega-lo ao final do documento, não será possível utiliza-lo no meio do `<body>`, então carrego o `jquery 3.4.1` no head da view `application/views/master.php`
+> Note que o Jquery não é carregado nos `assets`, visto que se carrega-lo ao final do documento, não será possível utiliza-lo no meio do `<body>`, então carrego o `jquery 3.4.1` no <head> da view `application/views/master.php`
 
 ```php
 // Bootstrap 4.3.1
@@ -158,7 +154,8 @@ $config['custom'] = [
 ];
 ```
 
-> Essa `$config` é carregada no método construtuor do [Template](#biblioteca-template)
+> Essa `$config` é carregada no método construtuor do [Template](#biblioteca-template) 
+> Para exibir os css/js são utilizados as funções `print_css()` e `print_js()` do [Template](#biblioteca-template) 
 
 ## Biblioteca Template
 
