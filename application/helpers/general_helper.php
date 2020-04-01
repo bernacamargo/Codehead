@@ -188,3 +188,38 @@ if (!function_exists('hextorgba')) {
 		echo 'rgba(' . $r . ',' . $g . ',' . $b . ', ' . $transp . ')';
 	}
 }
+
+
+if (!function_exists('log_error')) {
+	/**
+	 * Generate log file
+	 *
+	 * @param String $name
+	 * @param String $error_message
+	 * @return void
+	 */
+    function log_error($name, $error_message)
+    {
+        $now = now('America/Sao_Paulo');
+        $date = date('Y-m-d H:i:s', $now);
+        $year = date('Y', $now);
+        $month = date('m', $now);
+        $day = date('d', $now);
+        $hour = date('H', $now);
+        
+        // Caminho do log
+        $log_path = APPPATH . 'logs/' . $name . '/' . $year . '/' . $month . '/' . $day . '/' . $hour . '/';
+
+        // Verifica se o diretorio existe
+        if (!is_dir($log_path)) {
+            // Criar o diretorio recursivamente
+            mkdir($log_path, 0755, true);
+        }
+
+        // Adiciona o datetime antes da mensagem de erro
+        $error_message = '[' . $date . '] ' . 'ERROR: ' . $error_message;
+
+		// Gera o log de erro
+        error_log($error_message . "\n", 3, $log_path . 'error_log.log');
+    }
+}
