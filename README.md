@@ -1,13 +1,13 @@
-# Codehead - Template para Codeigniter
+# CodeHead - Template para Codeigniter
 <!-- [![Latest Stable Version](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/v/stable)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10)
 [![Licença](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/license)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10) -->
 
 <!-- [![Total Downloads](https://poser.pugx.org/bernacamargo/template_codeigniter-3.1.10/downloads)](https://packagist.org/packages/bernacamargo/template_codeigniter-3.1.10) -->
 
-Codehead é uma biblioteca com otimizações voltadas para evitar a repetição de código e aumentar a produtividade através de métodos úteis. Utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery 3.4.1](https://jquery.com/), [Font-awesome 5.8.1](http://fontawesome.io/icons), [Toastr](https://codeseven.github.io/toastr/), [Core System Classes](https://www.codeigniter.com/user_guide/general/core_classes.html) e [Bibliotecas PHP](https://www.codeigniter.com/user_guide/libraries/loader.html) para manipular funções do [Codeigniter](https://www.codeigniter.com/).
+CodeHead é uma biblioteca com otimizações voltada para diminuir a repetição de código e aumentar a produtividade através de métodos úteis. Utilizaremos [Twitter Bootstrap 4](https://getbootstrap.com.br/docs/4.1/getting-started/introduction/), [JQuery 3.4.1](https://jquery.com/), [Font-awesome 5.8.1](http://fontawesome.io/icons), [Toastr](https://codeseven.github.io/toastr/), [Core System Classes](https://www.codeigniter.com/userguide3/general/core_classes.html) e [Bibliotecas](https://www.codeigniter.com/userguide3/libraries/loader.html) para manipular funções do [Codeigniter 3](https://www.codeigniter.com/userguide3/index.html).
 
 * Links úteis
-    * [Codeigniter user guide](https://www.codeigniter.com/user_guide/)(docs)
+    * [Codeigniter 3 Docs](https://www.codeigniter.com/userguide3/index.html)(docs)
     * [Awesome codeigniter](https://github.com/codeigniter-id/awesome-codeigniter)(A list of awesome CodeIgniter core, helpers, hooks, language, libraries, third_party and other cool resources for CodeIgniter.)
     * [Codeigniter Ion Auth 3](https://github.com/benedmunds/CodeIgniter-Ion-Auth)(Simple and lightweight authentication for your CodeIgniter apps)
     * [FUEL CMS](https://www.getfuelcms.com/home)(The content management system for premium-grade websites)
@@ -713,7 +713,7 @@ class Home extends MY_Controller {
 
 ## Biblioteca Guard
 
-Essa classe tem como função facilitar a manipulação da variável de sessão do usuário, utiliza-se as funções do [Session Library](https://www.codeigniter.com/user_guide/libraries/sessions.html) do Codeigniter.
+Essa classe tem como função facilitar a manipulação da variável de sessão do usuário, utiliza-se as funções do [Session Library](https://www.codeigniter.com/userguide3/libraries/sessions.html) do Codeigniter.
 
 > É restrito apenas à sessão de usuário (`$_SESSION['user']` ou `$this->session->user`);
 
@@ -1335,7 +1335,7 @@ else{
 
 ## Notificações
 
-O sistema de notificações deste template utiliza a biblioteca javascript [Toastr](https://codeseven.github.io/toastr/) juntamente com a função nativa do Codeigniter [SESSION Flashdata](https://www.codeigniter.com/user_guide/libraries/sessions.html#flashdata).
+O sistema de notificações deste template utiliza a biblioteca javascript [Toastr](https://codeseven.github.io/toastr/) juntamente com a função nativa do Codeigniter [SESSION Flashdata](https://www.codeigniter.com/userguide3/libraries/sessions.html#flashdata).
 
 Utilizaremos a função `notifyUser()` para exibir as notificações através do javascript.
 
